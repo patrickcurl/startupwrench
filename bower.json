@@ -1,0 +1,12 @@
+{
+  "name": "startupmonk",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "bootstrap-sass": "bootstrap-sass-official#~3.3.5",
+    "font-awesome": "fontawesome#~4.4.0",
+    "nivo-slider": "*",
+    "modernizer": "~2.8.2",
+    "algoliasearch": "~3.10.0"
+  }
+}

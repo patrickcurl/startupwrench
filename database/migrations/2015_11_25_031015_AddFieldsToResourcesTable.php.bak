@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class AddFieldsToResourcesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('resources', function(Blueprint $table) {
+
+            $table->string('logo_url')->nullable();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        $table->dropColumn('logo_url');
+    }
+}
+
+
+// ["name"=>"Springwise", "categories"=>"Blogs", "representation"=>"Your essential fix of entrepreneurial ideas.", "description"=>"Springwise scans the globe for smart new business ideas, delivering instant inspiration to entrepreneurial minds.", "content"=>"Helped by a network of over 15,000 spotters, Springwise scans the globe for the most promising business ventures, ideas and concepts that are ready for regional or international adaptation, expansion, partnering, investments or cooperation.<br />SPRINGWISE.COM", "url"=>"springwise.com", "facebook"=>"https://www.facebook.com/springwise", "twitter"=>"https://twitter.com/springwise", "logo"=>"http://startupstash.com/wp-content/uploads/2015/01/45.10springwise_a-150x150.png"]

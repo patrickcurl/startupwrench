@@ -1,0 +1,10 @@
+/vendor
+/resources/assets/bower
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
+_ide_helper.php
+scraper.rb
+sites.txt
+sitemap.xml
