@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<!-- Title here -->
-		<title>Metro Mania</title>
+		<title>StartupWrench :: The Tools You Need To Succeed</title>
 		<!-- Description, Keywords and Author -->
-		<meta name="description" content="Your description">
-		<meta name="keywords" content="Your,Keywords">
-		<meta name="author" content="ResponsiveWebInc">
+		<meta name="description" content="StartupWrench is a curated list of tools, resources, etc for startups.">
+		<meta name="keywords" content="startups, startup tools, startup resources">
+		<meta name="author" content="Patrick Curl">
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 

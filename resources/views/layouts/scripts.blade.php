@@ -1,5 +1,11 @@
 <script type="text/javascript">
       // $(document).ready(function() {
+        function getHost(url) 
+        {
+          var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
+          if ( match != null && match.length > 2 && typeof match[2] === 'string' &&   match[2].length > 0 ) return match[2];
+        }
+        
         jQuery(document).ready(function($){
         var $inputfield = $('#q');
         // Replace the following values by your ApplicationID and ApiKey.
@@ -23,30 +29,36 @@
             $('#hits').empty();
             $('#pagination').empty();
             return;
+            
           }
+          console.log(content.hits);
           // Scan all hits and display them
           var html = '';
           for (var i = 0; i < content.hits.length; ++i) {
+
             var hit = content.hits[i];
-            var resource = hit._highlightResult;
+            var resource = hit;
+            //console.log(hit);
+            var hresource = hit._highlightResult;
             html += '<div class="hit row clearfix">';
             // console.log(resource.name.value);
             if(resource.logo != undefined){
-              var logo = resource.logo.value;
+              var logo = resource.logo;
               
             } else {
               var logo = "no-logo.jpg";
             }
-
-            var slug = resource.slug.value;
-            var title = resource.name.value;
+            // console.log(resource.domain);
+            var slug = resource.slug;
+            var title = hresource.name.value;
             var url = "{{ url('/resources') }}" + slug;
-            var description = resource.description.value;
-            
+            var description = hresource.description.value;
+            // var domain = getHost(resource.domain.value);
+            var outurl = resource.domain;
             // var logo = r.logo_file_name.value;
             
             html += "<div class='col-md-3'><a href='" + url + "'><img src='/uploads/logos/" + logo + "' class='img-responsive' /></a></div>";
-            html += "<div class='col-md-8' style='margin-left:20px;'><h1>" + title + "</h1><p>" + description + "</p><p><a href='"+url+"'><i class='fa fa-arrow-circle-right'></i>Read More ...</p></div>";
+            html += "<div class='col-md-8' style='margin-left:20px;'><h1>" + title + "</h1><p>" + description + "</p><p><a href='"+url+"'><i class='fa fa-arrow-circle-right'></i> Read More ...</p><p><a href='"+ outurl +"''><i class='fa fa-link'></i> " + title + "</a></p></div>";
             // for (var attribute in hit._highlightResult) {
 
             //   html += '<div class="attribute">' +

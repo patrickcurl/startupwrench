@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        $latest = \App\Resource::all()->sortByDesc('created_at')->take(10);
+        $latest = \App\Resource::all()->sortByDesc('created_at')->take(42);
         view()->share('latest', $latest);
     }
 
