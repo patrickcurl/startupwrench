@@ -59,7 +59,8 @@
             var facebook = resource.facebook;
             // var logo = r.logo_file_name.value;
             
-            html += '<div class="col-md-3"><a href="' + url + '"><img src="/uploads/logos/' + logo + '" class="img-responsive" /></a><div class="well" style="padding:5px;"><a href="' + resource.domain + '" class="resource-link"><i class="fa fa-link"></i>Website</a>';
+            html += '<div class="col-md-3"><a href="' + url + '"><img src="/uploads/logos/' + logo + '" class="img-responsive" /></a>';
+            html+= '<div class="well" style="padding:5px;"><a href="' + resource.domain + '"><i class="fa fa-link"></i>Website</a>';
 
             if(twitter != undefined){
               html +='<br /><a href="' + twitter + '" class="resource-link"><i class="fa fa-twitter"></i> Twitter</a>';
@@ -68,7 +69,7 @@
               html += '<br /><a href="' + facebook + '" class="resource-link"><i class="fa fa-facebook"></i> Facebook</a>';
             }
             
-            html += "</div><div class='col-md-8' style='margin-left:20px;'><h1>" + title + "</h1><p>" + description + "</p><p><a href='"+url+"'><i class='fa fa-arrow-circle-right'></i> Read More ...</p><p><a href='"+ outurl +"''><i class='fa fa-link'></i> " + title + "</a></p></div>";
+            html += "</div></div><div class='col-md-8' style='margin-left:20px;'><h1>" + title + "</h1><p>" + description + "</p><p><a href='"+url+"'><i class='fa fa-arrow-circle-right'></i> Read More ...</p><p><a href='"+ outurl +"''><i class='fa fa-link'></i> " + title + "</a></p></div>";
             // for (var attribute in hit._highlightResult) {
 
             //   html += '<div class="attribute">' +
