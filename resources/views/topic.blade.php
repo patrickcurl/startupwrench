@@ -6,6 +6,13 @@
 			border:none;
 			padding-right:10px;
 		}
+
+	/*.resource-link{
+		max-width: 240px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}*/
 </style>
 
 @endsection
@@ -21,7 +28,12 @@
 			<div class="col-md-9">
 				<h1>{{ $resource->name }}</h1>
 				<p>{{ $resource->description }}</p>
-				<p><a href="{{ url('/resource/' . $resource->slug) }}"><i class="fa fa-arrow-circle-right"></i> Read More</a></p>
+				<div class="row">
+				<div class="col-md-5">
+					<a href="{{ url('/resource/' . $resource->slug) }}"><i class="fa fa-arrow-circle-right"></i> Read More</a></div>
+				<div class="col-md-5">
+					<a href="{{ $resource->domain }}" class="resource-link"><i class="fa fa-link"></i> {{ $resource->name }}</a>
+				</div>
 			</div>
 		</div>
 	@endforeach
