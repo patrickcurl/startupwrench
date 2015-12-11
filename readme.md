@@ -4,7 +4,7 @@ StartupWrench is a startup resource directory, it's open source and built via la
 
 More than anything it's a portfolio building application, as I'm looking to get hired. 
 
-If you want to contribute, drop me an email: [patrickwcurl AT gmail](patrickwcurl@gmail.com)
+If you want to contribute, drop me an email: <patrickwcurl@gmail.com>
 
 [![Join the chat at https://gitter.im/patrickcurl/startupwrench](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/patrickcurl/startupwrench?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
