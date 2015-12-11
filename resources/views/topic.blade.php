@@ -24,16 +24,23 @@
 		<div class="row clearfix">
 			<div class="col-md-3">
 				<a href="{{ url('/resource/' . $resource->slug) }}"><img src="{{ asset('uploads/logos/' . $resource->logo) }}" class="img-thumbnail img-responsive" /></a>
+				<div class="clearfix" style="padding-top:10px;"></div>
+				<div class="well" style="padding:5px;">
+					<a href="{{ $resource->domain }}" class="resource-link"><i class="fa fa-link"></i> Website</a>
+					@if($resource->twitter)
+					<br /><a href="{{ $resource->twitter }}" class="resource-link"><i class="fa fa-twitter"></i> Twitter</a>
+					@endif
+					@if($resource->facebook)
+					<br /><a href="{{ $resource->facebook }}" class="resource-link"><i class="fa fa-facebook"></i> Facebook</a>
+					@endif
+				</div>
 			</div>
 			<div class="col-md-9">
 				<h1>{{ $resource->name }}</h1>
-				<p>{{ $resource->description }}</p>
-				<div class="row">
-				<div class="col-md-5">
-					<a href="{{ url('/resource/' . $resource->slug) }}"><i class="fa fa-arrow-circle-right"></i> Read More</a></div>
-				<div class="col-md-5">
-					<a href="{{ $resource->domain }}" class="resource-link"><i class="fa fa-link"></i> {{ $resource->name }}</a>
-				</div>
+				<p>{{ $resource->description }}
+				<br /><br /><a href="{{ url('/resource/' . $resource->slug) }}"><h4><i class="fa fa-arrow-circle-right"></i> Read More</a></h4></p>
+
+				
 			</div>
 		</div>
 	@endforeach
