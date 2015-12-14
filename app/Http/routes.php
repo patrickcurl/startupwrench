@@ -17,9 +17,50 @@ Route::get('/', function () {
     return view('home')->with('topics', $topics);
 });
 
-Route::get('/admin', ['middleware' => 'auth', function(){
-	return view('admin');
-}]);
+Route::get('login', function(){
+    return view('users.login');
+});
+Route::get('logout', 'Auth\AuthController@getLogout');
+
+// Route::group(['middleware'=>'dashboard'], function(){
+
+// })
+// Route::get('/admin', ['middleware' => ['auth', 'dashboard'], function(){
+// 	return view('admin');
+// }]);
+// Route::get('/admin/{page}', 'AdminController@getPage');
+Route::group(['middleware' => ['auth', 'dashboard']], function(){
+    // Route::get('/admin', function(){
+    //     return view('admin');
+    // });
+    Route::get('/admin', ['as' => 'home', 'uses' => 'AdminController@showPage']);
+    Route::get('/admin/topics', ['as' => 'topics', 'uses' => 'AdminController@getPage']);
+
+    Route::post('/admin/topics', function(){
+       return Input::all();
+       $topic = App\Topic::find(\Input::get('pk'));
+       $topic->name = Input::get('value');
+       if($topic->save()){
+        return Response::json(['status' => 1, 'name' => $topic->name]);
+       } else {
+        return Response::json(['status' => 0]);
+       }
+
+       
+    });
+    Route::get('/admin/resources', ['as' => 'res.edit', 'uses' => 'AdminController@getResources']);
+    Route::get('/admin/resource-links', ['as' => 'res.links', 'uses' => 'AdminController@getResourceLinks']);
+    Route::post('/admin/resource-links', 'AdminController@postResourceLinks');
+    Route::post('/admin/resources', 'AdminController@postResources');
+    
+    Route::get('/admin/{page}', 'AdminController@getPage');
+    //Route::get('/admin/{$page}', 'AdminController@getPage');
+    Route::get('/configurations', ['as' => 'config', 'uses' => 'AdminController@showPage']);
+    
+   ;
+    
+    
+});
 
 Route::controller('users', 'UserController');
 
@@ -50,13 +91,58 @@ Route::get('/test', function(){
 
 // Route::get('/preview', 'ResourceController@preview');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
-	Route::get('/', function(){
-		return view('admin.index');
-	});
-  Route::post('resource/create', 'ResourceController@store');
-	Route::resource('resource', 'ResourceController');
+// Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+// 	Route::get('/', function(){
+// 		return view('admin.index');
+// 	});
+//   Route::post('resource/create', 'ResourceController@store');
+// 	Route::resource('resource', 'ResourceController');
 
+// });
+
+Route::get('/go/{slug}', function($slug){
+    switch($slug){
+        case "inmotion":
+        return redirect("https://secure1.inmotionhosting.com/cgi-bin/gby/clickthru.cgi?id=patrickcurl&page=3");
+        case "7habits":
+        return redirect("http://www.amazon.com/Habits-Highly-Effective-People-Powerful/dp/1451639619/?_encoding=UTF8&camp=1789&creative=9325&linkCode=ur2&qid=1449912952&refinements=p_82%3AB000AQ2VAQ&s=books&sr=1-1&tag=startupwrench-20&linkId=C7KBIGY36F53RI3X");
+        case "goodideas":
+        return redirect("http://www.amazon.com/exec/obidos/asin/1594487715/?_encoding=UTF8&camp=1789&creative=9325&linkCode=ur2&tag=startupwrench-20&linkId=6PQAOR4GTZFOEYQP");
+        case "4stepsepiphany":
+        return redirect("http://www.amazon.com/four-steps-epiphany-steve-blank/dp/0989200507/?_encoding=UTF8&camp=1789&creative=9325&linkCode=ur2&tag=startupwrench-20&linkId=GAOYHFEZAIYT4APR");
+        case "withoutpermission":
+        return redirect("http://www.amazon.com/Without-Their-Permission-Century-Managed/dp/1455520020/?_encoding=UTF8&camp=1789&creative=9325&linkCode=ur2&qid=1362250000&sr=8-1&tag=startupwrench-20&linkId=3HTZHQWDTW3YRHZR");
+        case "zero-to-one":
+        return redirect("http://www.amazon.com/gp/product/0804139296/?ie=UTF8&camp=1789&creative=9325&creativeASIN=0804139296&linkCode=ur2&linkId=K5HJDPUEXGTSURYE&tag=startupwrench-20&linkId=E7ELWEEC7V5GLHX7");
+        case "start-with-why":
+        return redirect("http://www.amazon.com/Start-Why-Leaders-Inspire-Everyone-ebook/dp/B002Q6XUE4/?_encoding=UTF8&camp=1789&creative=9325&linkCode=ur2&tag=startupwrench-20&linkId=MCQ537HCY75HYL43");
+        case "hardthings":
+        return redirect("http://www.amazon.com/dp/0062273205/?_encoding=UTF8&camp=1789&creative=9325&linkCode=ur2&tag=startupwrench-20&linkId=4H2ZQWFPLIXGGJ5V");
+        case "":
+        return redirect("");
+        case "":
+        return redirect("");
+        case "":
+        return redirect("");
+        case "":
+        return redirect("");
+    }
+});
+
+Route::get('/out/{slug}', function($slug){
+    $resource = App\Resource::findBySlug($slug);
+    if($resource->afflink){
+        $url = $resource->afflink;
+    } else {
+       $url = $resource->domain; 
+    }
+    
+    $resource->clicks += 1;
+    redirect($url);
+});
+
+Route::get('/privacy', function(){
+    return view('privacy');
 });
 
 Route::get('facebook/authorize', function() {
@@ -87,3 +173,70 @@ Route::get('facebook/login', function() {
     return redirect('/admin');
 });
 
+Route::get('sitemap', function(){
+    $sitemap = App::make("sitemap");
+    $sitemap->setCache('laravel.sitemap-index', 3600);
+    $sitemap->addSitemap(url('/sitemap-pages'));
+    $sitemap->addSitemap(url('/sitemap-topics'));
+    $sitemap->addSitemap(url('/sitemap-resources'));
+
+    return $sitemap->render('sitemapindex');
+
+
+});
+
+Route::get('sitemap-pages', function(){
+    $sitemap = App::make("sitemap");
+    $sitemap->setCache('laravel.sitemap-pages', 3600);
+    if (!$sitemap->isCached())
+    {
+        $sitemap->add(url('/'), Carbon\Carbon::now(), '1.0', 'weekly');
+    }
+
+    return $sitemap->render('xml');
+});
+
+Route::get('sitemap-topics', function()
+{
+    // create sitemap
+    $sitemap_topics = App::make("sitemap");
+
+    // set cache
+    $sitemap_topics->setCache('laravel.sitemap-topics', 3600);
+
+    // add items
+    $topics = DB::table('topics')->orderBy('created_at', 'desc')->get();
+
+    foreach ($topics as $topic)
+    {
+        $sitemap_topics->add($topic->slug, $topic->updated_at, '.9', 'daily');
+    }
+
+    // show sitemap
+    return $sitemap_topics->render('xml');
+});
+
+Route::get('sitemap-resources', function()
+{
+    // create sitemap
+    $sitemap_resources = App::make("sitemap");
+
+    // set cache
+    $sitemap_resources->setCache('laravel.sitemap-resources', 3600);
+
+    // add items
+    $resources = DB::table('resources')->orderBy('created_at', 'desc')->get();
+
+    foreach ($resources as $resource)
+    {
+        $sitemap_resources->add($resource->slug, $resource->updated_at, '.9', 'daily');
+    }
+
+    // show sitemap
+    return $sitemap_resources->render('xml');
+});
+
+Route::get('/links', function(){
+    $resources = DB::table('resources')->orderBy('created_at', 'desc')->get();
+    return view('links')->with('resources', $resources);
+});

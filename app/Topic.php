@@ -26,12 +26,18 @@ class Topic extends BaseModel implements SluggableInterface
   }
 
   
- 	public static function create(array $attributes = [])
+ 	// public function resourceCount(){
+  //   return 
+  // }
+
+  public static function create(array $attributes = [])
     {
         $model = new static($attributes);
         $model->save();
         return $model;
     }
+
+
 
   // edit create to be more of a find or create function. 
   // public static function create(array $attributes = [])

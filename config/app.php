@@ -154,7 +154,11 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         AdamWathan\EloquentOAuthL5\EloquentOAuthServiceProvider::class,
         AlgoliaSearch\Laravel\AlgoliaServiceProvider::class,
-        
+        Roumen\Sitemap\SitemapServiceProvider::class,
+        HieuLe\LaravelDashboard\LaravelDashboardServiceProvider::class,
+        HieuLe\LaravelMenu\LaravelMenuServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Jenssegers\Rollbar\RollbarServiceProvider::Class,
     ],
 
     /*
@@ -211,6 +215,9 @@ return [
         'Fluent'     => inkvizytor\FluentForm\Facades\FluentHtml::class,
         'Image'      => Intervention\Image\Facades\Image::class,
         'SocialAuth' => AdamWathan\EloquentOAuth\Facades\OAuth::class,
+        'Menu' => HieuLe\LaravelMenu\Facades\LaravelMenu::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
     ],
 
 ];

@@ -222,6 +222,17 @@ class Resource extends BaseModel implements SluggableInterface, StaplerableInter
     return $domain;
   }
 
+  public function setVal($name, $value){
+    try{
+      $this->{$name} = $value;
+      return $this->save();
+    } catch(Exception $e){
+      return $e;
+    }
+
+    return "hmmm";
+  }
+
   
   public function sync_cats($cat)
   {
@@ -229,15 +240,15 @@ class Resource extends BaseModel implements SluggableInterface, StaplerableInter
   }
 
   
-    public function save(array $options = array())
-    {
-        // $this->grab_bs();
+    // public function save(array $options = array())
+    // {
+    //     // $this->grab_bs();
 
-        parent::save($options);
-        self::addAllToIndex();
-        return true;
+    //     parent::save($options);
+    //     self::addAllToIndex();
+    //     return true;
 
-    }
+    // }
 
  
 

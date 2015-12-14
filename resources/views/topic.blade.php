@@ -45,8 +45,11 @@
 		</div>
 	@endforeach
 	</div>
-	<div class="col-md-3 pull-right"><img src="http://placehold.it/350x150"></div>
-	
+	<div class="col-md-3 pull-right">
+		{!! $sidebar_ads['inmotion'] !!}<br />
+		{!! $sidebar_ads['adsense'] !!}
+	</div>
+
 @endsection
 {{-- @section('sidebar')
 	<div class="col-md-6 pull-right"><img src="http://placehold.it/350x150"></div>

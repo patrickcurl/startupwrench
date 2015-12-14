@@ -41,4 +41,12 @@ elixir(function(mix) {
         './resources/assets/bower/bootstrap-paginator/build/bootstrap-paginator.min.js',
         './resources/assets/bower/algoliasearch/dist/algoliasearch.min.js',
     ], 'public/js/vendor.js');	
+
+    mix.scripts([
+        './resources/assets/bower/jquery/dist/jquery.min.js',
+        './resources/assets/bower/bootstrap-sass/assets/javascripts/bootstrap.min.js',
+        './resources/assets/bower/slimscroll/jquery.slimscroll.min.js',
+        './resources/assets/bower/jeditable/js/jquery.jeditable.js',
+
+        ], 'public/vendor/laravel_dashboard/js/main.js');
 });

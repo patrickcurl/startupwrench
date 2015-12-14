@@ -210,7 +210,7 @@ body {
 		</header>
 
 		
-		{{-- @include('layouts.nav') --}}
+		@include('layouts.nav')
 			{{-- <div class="col-md-12"> --}}
 					<div id="searchContent" class="container hidden">
 						<div class="row">
@@ -221,8 +221,8 @@ body {
 						<div class="row">
     					<div id="hits" class="col-md-7">
     		 			</div>
-    					<div id="ads" class="col-md-4 pull-right">
-    						<img src="http://placehold.it/350x150">
+    					<div id="sidebar_a" class="col-md-4 pull-right">
+    						
     					</div>
     				</div>
     				<div class="row">
