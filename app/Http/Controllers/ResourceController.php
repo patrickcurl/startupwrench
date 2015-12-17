@@ -10,44 +10,23 @@ use App\Resource;
 use App\Topic;
 class ResourceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $resources = Resource::all();
-        return view('admin.resources.index')->with('resources', $resources);
-    }
+	public function getIndex($slug = null)
+	{
+		 $resource = Resource::findBySlug($slug);
+		 return view('resources.show', ['resource' => $resource, 'template' => 'resource'])->with('resource', $resource);
+	}
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $resource = new Resource;
-        $allTopics = Topic::all()->sortBy('name');
-        $topics = [];
-        foreach($allTopics as $topic){
-            $topics += [$topic->id => $topic->name];
-         }
+	public function getNew(){
+		$resource = new Resource;
+    $allTopics = Topic::all()->sortBy('name');
+    $topics = [];
+    foreach($allTopics as $topic){
+        $topics += [$topic->id => $topic->name];
+     }
+		return view('resources.new', ['topics' => $topics, 'resource' => $resource]);
+	}
 
-        // return var_dump($topics);
-        return view('admin.resources.create', ['topics' => $topics, 'resource' => $resource]);
-            // ->with('topics', $topics);
-            //->with('rules', $this->rules);
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request, Resource $resource)
+	public function postNew(Request $request, Resource $resource)
     {
         //
         $input = $request->all();
@@ -73,74 +52,5 @@ class ResourceController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $resource = Resource::find($id);
-        // return var_dump($resource);
-        $allTopics = Topic::all()->sortBy('name');
-        $topics = [];
-        foreach($allTopics as $topic){
-            $topics += [$topic->id => $topic->name];
-            if($resource->topics->has($topic->id)){
-            }
-           
-         }
-
-        // return view('resources.edit')->with('resource', $resource);
-        return view('admin.resources.edit')
-            ->with('resource', $resource)
-            ->with('topics', $topics);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    public function preview()
-    {
-        return \Form::preview();
-    }
-
-    public function rules(){
-        return [
-            'title' => 'required',
-            'name' => 'required'
-        ];
-    }
 }

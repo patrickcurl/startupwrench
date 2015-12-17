@@ -4,69 +4,49 @@ namespace App;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
-use Codesleeve\Stapler\ORM\StaplerableInterface;
-use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
-use Codesleeve\Stapler\ORM\EloquentTrait;
-use Spatie\Browsershot\Browsershot;
-
+// use Codesleeve\Stapler\ORM\StaplerableInterface;
+use App\Contracts\Reviewable;
+use App\Traits\Reviewable as ReviewableTrait;
+// use Codesleeve\Stapler\ORM\EloquentTrait;
+// use Spatie\Browsershot\Browsershot;
+// use Elasticquent\ElasticquentTrait;
+use Sofa\Eloquence\Eloquence;
 use \Image;
-use \Screenshot;
 
-class Resource extends BaseModel implements SluggableInterface, StaplerableInterface
+class Resource extends BaseModel implements SluggableInterface, Reviewable
 {
+  use Eloquence;
 	use SluggableTrait;
-	use EloquentTrait;
-  use AlgoliaEloquentTrait;
+  // use ElasticquentTrait;
+	// use EloquentTrait;
+  use ReviewableTrait;
+
+
   
 	protected $sluggable = [
         'build_from' => 'name',
         'save_to'    => 'slug',
     ];
 
+
+  
   protected $rules = [
     'name' => 'required|unique:resources,name'
   ];
 
-  public $algoliaSettings = [
-        'attributesToIndex' => [
-            'id', 
-            'name',
-            'description',
-            'representation',
-            'content'
-        ],
-        'customRanking' => [
-            'desc(popularity)', 
-            'asc(name)',
-        ],
-    ];
-
-
+  protected $searchableColumns = ['name', 'representation', 'description', 'content'];
 
   public function topics(){
   	return $this->belongsToMany('App\Topic');
   }
 
-  // public function __construct(array $attributes = array()) {
-  //       $this->hasAttachedFile('logo', [
-  //           'styles' => [
-  //               'medium' => '400x300',
-  //               'thumb' => '100x100'
-  //           ]
-  //       ]);
+ 
 
-  //       parent::__construct($attributes);
-  //   }
 
   // protected $guarded = ['_token', 'submit'];
   protected $fillable = ['title', 'excerpt', 'description', 'logo', 'featured_image', 'email', 'website', 'name', 'slug'];
 
-  public function get_logo(){
-  	if($this->logo_url){
-  			$img = Image::make($this->logo_url)->resize(300,200);
-  			return $img->save("uploads/logos/{$this->slug}-logo-300-200.png");
-  	}
-  }
+  
 
   public function selectedTopics(){
   	$selected = [];
@@ -139,14 +119,70 @@ class Resource extends BaseModel implements SluggableInterface, StaplerableInter
     return "File already exists";
   }
 
+  public function getFeaturedImageAttribute($value){
+    if($value && $value != ""){
+      return $value;
+    }
+    $filepath = "../public/uploads/sites/{$this->slug}.png";
+    
+    if(file_exists($filepath)){
+       return "{$this->slug}.png";
+      
+    } else {
+      return  "image-not-available.png";
+    }
+
+    
+
+  }
+
+  public function getFeaturedImage(){
+    if($this->featured_image && $this->featured_image != ""){
+      return $this->featured_image;
+    }
+    $filepath = "public/uploads/sites/{$this->slug}.png";
+    if(file_exists($filepath)){
+      return "{$this->slug}.png";
+      // return $filepath;
+    } else {
+      return  "image-not-available.png";
+    }
+
+    
+
+  }
 
 
+  public function get_logo(){
+    if($this->logo_url){
+        $img = Image::make($this->logo_url)->resize(300,200);
+        return $img->save("uploads/logos/{$this->slug}-logo-300-200.png");
+    }
+  }
 
   public function resize_image($file, $w = 1280, $h = 1024){
     $img = Image::make($file);
     $img->resize($w,$h);
     $img->save($file);
   }
+
+  public function renameLogo(){
+    $path = "uploads/logos/";
+    $original = "public/uploads/logos/{$this->logo}";
+    $new = "public/uploads/logos/{$this->slug}.png";
+    // return 
+    $img = Image::make($original);
+    $img->save($new);
+    $this->logo = $this->slug . ".png";
+    $this->save();
+    unlink($original);
+    // if($this->logo && fileexists($path . $this->logo)){
+    //   return rename($path.$this->logo, $path.$this->slug.'png');
+    // }
+    //return $img->save($path . $this->slug . ".png");
+  }
+
+
 
 
   public function grab_logo($logo_url)
@@ -205,9 +241,9 @@ class Resource extends BaseModel implements SluggableInterface, StaplerableInter
     return $this->domain = $value;
   }
 
-  public function setLogoAttribute($value){
-    return $this->logo = $value;
-  }
+  // public function setLogoAttribute($value){
+  //   return $this->logo = $value;
+  // }
 
 
   public function format_domain($domain){
@@ -240,16 +276,112 @@ class Resource extends BaseModel implements SluggableInterface, StaplerableInter
   }
 
   
-    // public function save(array $options = array())
+  // public function save(array $options = array())
+  // {
+  //     // $this->grab_bs();
+
+  //     parent::save($options);
+  //     // self::reIndex();
+  //     // $this->addToIndex();
+  //     return true;
+
+  // }
+
+  public static function getFeatured($count){
+    // $featured_resources = \App\Resource::whereNotNull('afflink')->orderByRaw("RAND()")->take(5);
+    $featured = self::whereNotNull('afflink')->get()->random($count);
+    return $featured;
+  }
+
+  // search using : eloquence search package.
+  public static function searchQuery($q){
+    return self::search($q, ['name' => 10, 'representation' => 7, 'description' => 6, 'content' => 5])->get();
+  }
+
+
+  // search using mysql + full text index. 
+  public static function mySearch($q){
+    $q = $q . "*";
+    // return $q;
+    $resources = self::whereRaw("MATCH(name, content, description, representation) AGAINST (? IN BOOLEAN MODE)", [$q])->get();
+    // $resources = "MATCH(title,body) AGAINST(? IN BOOLEAN MODE)", [$q])->get();
+    return $resources;
+  }
+
+  // public function next()
+  //   {
+  //       return $this->where('id', '>', $this->id)->orderBy('id','asc')->first();
+  //   }
+    
+  public function next(){
+    //return self::last()->id;
+    if($this->id == self::all()->last()->id){
+
+      return self::where('approved', '=', 1)->orderBy('id','asc')->first();
+    } else {
+      return self::where('approved', '=', 1)->where('id','>',$this->id)->orderBy('id','asc')->first();
+    }
+    return false;
+  }
+
+  public function previous(){
+    if($this->id == self::first()->id){
+      return self::where('approved', '=', 1)->orderBy('id','desc')->first();
+    } else {
+      return self::where('approved', '=', 1)->where('id','<',$this->id)->orderBy('id','desc')->first();
+    }
+    return false;
+  }
+
+
+    // public function previous()
     // {
-    //     // $this->grab_bs();
+    //     if($this->first()->id == $this->id){
+    //         // $prev = $this->last();
+    //     } else {
+    //        //  $prev = self::where('id', '<', $this->id)->orderBy('id','desc')->first();
+    //     }
 
-    //     parent::save($options);
-    //     self::addAllToIndex();
-    //     return true;
+    //     // return $prev;
+        
 
-    // }
+  // }
 
+  public function getUrl($type){
+    
+    if($type === "out"){
+      $url = "/out/{$this->slug}";
+    }
+    if($type === "internal"){
+      $url = "/resource/{$this->slug}";
+    }
+
+    if($type === "logo"){
+      $url = "/uploads/logos/{$this->logo}";
+    }
+
+    if($type === "featured_image"){
+      $url = "/uploads/sites/{$this->featured_image}";
+    }
+
+    
+    if($type === "facebook"){
+      if(isset($this->facebook) && $this->facebook){
+        $url = $this->facebook;
+      }
+    }
+    if($type === "twitter"){
+      if(isset($this->twitter) && $this->twitter){
+        $url = $this->twitter;
+      }
+    }
+
+    if(isset($url) && $url){
+      return $url;
+    }
+
+    return false;
+  }
  
 
 

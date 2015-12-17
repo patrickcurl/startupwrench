@@ -1,6 +1,7 @@
 /vendor
 /resources/assets/bower
-/database/seeds/ResourceTableSeeder.php.bak
+/database/seeds
+/database/backups
 /node_modules
 Homestead.yaml
 Homestead.json

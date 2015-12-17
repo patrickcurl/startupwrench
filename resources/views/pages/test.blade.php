@@ -1,0 +1,1 @@
+{{ App\Resource::searchIt('el') }}

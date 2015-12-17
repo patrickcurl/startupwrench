@@ -54,6 +54,8 @@ class BaseModel extends Model
         return $url;
     }
 
+       
+
     protected static function contains($needle, $haystack)
     {
         return strpos($haystack, $needle) !== false;

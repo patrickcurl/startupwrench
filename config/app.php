@@ -159,6 +159,11 @@ return [
         HieuLe\LaravelMenu\LaravelMenuServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Jenssegers\Rollbar\RollbarServiceProvider::Class,
+        Bausch\LaravelFortress\ServiceProvider::class,
+        GrahamCampbell\GitHub\GitHubServiceProvider::class,
+       // Laracasts\Flash\FlashServiceProvider::class,
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
+        Sofa\Eloquence\ServiceProvider::class,
     ],
 
     /*
@@ -215,9 +220,11 @@ return [
         'Fluent'     => inkvizytor\FluentForm\Facades\FluentHtml::class,
         'Image'      => Intervention\Image\Facades\Image::class,
         'SocialAuth' => AdamWathan\EloquentOAuth\Facades\OAuth::class,
-        'Menu' => HieuLe\LaravelMenu\Facades\LaravelMenu::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
-
+        'Menu'       => HieuLe\LaravelMenu\Facades\LaravelMenu::class,
+        'Debugbar'   => Barryvdh\Debugbar\Facade::class,
+       // 'Flash'      => Laracasts\Flash\Flash::class,
+       // 'GitHub'     => GrahamCampbell\GitHub\Facades\GitHub::class,
+        'Recaptcha'  => Greggilbert\Recaptcha\Facades\Recaptcha::class,
     ],
 
 ];
