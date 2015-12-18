@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        $latest = Resource::all()->sortByDesc('created_at')->take(42);
+        $latest = Resource::where('approved','=', true)->orderBy('created_at', 'desc')->take(42)->get();
         $topics = Topic::all()->sortBy('name');
         $wide = false;
         $featured_resources = Resource::getFeatured(5);
