@@ -1,28 +1,24 @@
+@section('style')
+  #pagination { position: fixed; bottom: 10px; left: 10px;}
+@endsection
 <div id="searchContent" class="container hidden">
-						<div class="row">
-							<div class="container">
-    						<ul id="pagination" class="pagination pull-left"></ul>
-    					</div>
-    				</div>
-						<div class="row">
-    					<div id="hits" class="col-md-8">
-    		 			</div>
-    					<div class="col-md-4">
-              {!! $sidebar_ads['inmotion'] !!}<br />
-          {{--     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- startupwrench-sidebar-top -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:336px;height:280px"
-     data-ad-client="ca-pub-4190828597999315"
-     data-ad-slot="8479557582"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script> --}}
-            </div>
-    				</div>
-    				<div class="row">
-    					<div class="container">
-    						<ul id="pagination" class="pagination pull-left"></ul>
-    					</div>
-    				</div>
-    			</div>
+	  {{-- @include('layouts.partials.pagination') --}}
+		<div class="row">
+  		<div id="hits" class="col-md-8">
+  		</div>
+  		<div class="col-md-4">
+        {!! $sidebar_ads['inmotion'] !!}<br />
+        @include('ads.adsense300')
+        @foreach($featured_resources as $featured_resource)
+          <h4>
+            <a href="{{ $featured_resource->getUrl('internal') }}">{{ $featured_resource->name }}</a> |
+            <a href="{{ $featured_resource->getUrl('out') }}"><i class="fa fa-external-link"></i></a>
+          </h4>
+          <img src="{{ $featured_resource->getUrl('featured_image') }}" class="img-responsive"><br />
+        @endforeach
+      </div>
+    </div>
+    </div>
+    @include('layouts.partials.pagination')
+    @include('layouts.partials.footer');
+</div>

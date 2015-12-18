@@ -187,7 +187,10 @@
 
       #fixedbutton {
         position: fixed;
-        bottom: 40px;
+        bottom: 10px;
         right: 10px; 
+        z-index: 1000
       }
+
+      #pagination { position: fixed; bottom: 10px; left: 10px; z-index: 1000}
      

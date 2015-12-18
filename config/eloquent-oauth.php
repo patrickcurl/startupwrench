@@ -4,9 +4,9 @@ return [
 	'table' => 'oauth_identities',
 	'providers' => [
 		'facebook' => [
-			'client_id' => '1083480738331568',
-			'client_secret' => '2bff41cdc077cc5cf4e02dde9a9cc3a3',
-			'redirect_uri' => 'http://start.dev/facebook/login',
+			'client_id' => env("FB_CLIENT_ID"),
+			'client_secret' => env("FB_CLIENT_SECRET"),
+			'redirect_uri' => env("FB_REDIRECT_LOGIN"),
 			'scope' => [],
 		],
 		'google' => [

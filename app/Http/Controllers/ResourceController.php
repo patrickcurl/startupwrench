@@ -52,5 +52,10 @@ class ResourceController extends Controller
         return redirect()->back();
     }
 
+    // API CALLS
+
+
+    
+
 
 }

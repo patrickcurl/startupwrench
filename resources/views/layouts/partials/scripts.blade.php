@@ -28,7 +28,7 @@
           // toggleSearch("none");
           var $queryField = $('#s');
           // if($('#s').val() != undefined){
-            
+
           //   search($('#s').val());
           // }
           $('#s').keyup(function(){
@@ -87,7 +87,7 @@
                 console.log(data.total);
                 // no results
                 $('#hits').empty();
-                $('#pagination').empty();
+                // $('#pagination').empty();
                 return;  
               }
               var html = '';
