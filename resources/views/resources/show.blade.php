@@ -25,11 +25,24 @@ img.scale {
   <div class="row">
     <div class="col-md-2">
       <img src="{{ $resource->getUrl('logo') }}" class="img-responsive img-thumbnail">
+      <br>
+      <div class="text-center" style="width:100%;border: 2px solid #FF9800;margin:3px;padding:3px;">
+        <a href="{{ $resource->getUrl('out') }}" style="padding-right: 3px;"><i class="fa fa-link fa-2x"></i></a>
+        @if($resource->twitter)
+          <a href="{{ $resource->getUrl('twitter') }}" style="padding-left: 3px; padding-right: 3px;"><i class="fa fa-twitter fa-2x"></i></a>
+        @endif
+        @if($resource->facebook)
+          <a href="{{ $resource->getUrl('facebook') }}" style="padding-left: 3px; padding-right: 3px;"><i class="fa fa-facebook fa-2x"></i></a>
+        @endif
+        </div>
     </div>
     <div class="col-md-8">
       <div class="page-header">
         <h1>{{ $resource->name }}</h1><small>{{ $resource->description }}</small>
       </div>
+    </div>
+    <div class="col-md-2">
+    <a href="{{ $resource->getUrl('out') }}"><i class="fa fa-link"></i></a>
     </div>
   </div>
   <div class="row">
