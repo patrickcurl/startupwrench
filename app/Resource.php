@@ -154,10 +154,19 @@ class Resource extends BaseModel implements SluggableInterface, Reviewable
 
 
   public function get_logo(){
-    if($this->logo_url){
+    if($this->logo){
         $img = Image::make($this->logo_url)->resize(300,200);
-        return $img->save("uploads/logos/{$this->slug}-logo-300-200.png");
+        return $img->save("uploads/logos/{$this->slug}.png");
     }
+  }
+
+  public function setLogoAttribute($value){
+    if(isset($value) && $value){
+      $img = Image::make($value)->resize(300,200);
+      $this->attributes['logo'] = "{$this->slug}.png";
+      return $img->save("public/uploads/logos/{$this->slug}.png");
+    }
+     return false;
   }
 
   public function resize_image($file, $w = 1280, $h = 1024){
@@ -185,34 +194,36 @@ class Resource extends BaseModel implements SluggableInterface, Reviewable
 
 
 
-  public function grab_logo($logo_url)
-  { 
-    $file = basename($logo_url);
-    if (!file_exists("public/uploads/logos/{$this->slug}")){
+  // public function grab_logo($logo_url)
+  // { 
+
+  //   $img = Image::make('')
+  //   //$file = basename($logo_url);
+  //   if (!file_exists("../public/uploads/logos/{$this->slug}")){
       
-      try 
-      {
-        // $this->logo_file_name = $file;
-        // create the image and save locally. 
-        $img = Image::make($logo_url);
-        if($img->save("public/uploads/logos/{$this->slug}")){
-          $this->logo_file_name = $file;
-          $this->save();
-          return true;
-        }
+  //     try 
+  //     {
+  //       // $this->logo_file_name = $file;
+  //       // create the image and save locally. 
+  //       $img = Image::make($logo_url);
+  //       if($img->save("public/uploads/logos/{$this->slug}")){
+  //         $this->logo_file_name = $file;
+  //         $this->save();
+  //         return true;
+  //       }
 
-      } catch(\Exception $e){
-        return 'GrabLogo Exception: ' + $e->getMessage();
-      } 
-    }
+  //     } catch(\Exception $e){
+  //       return 'GrabLogo Exception: ' + $e->getMessage();
+  //     } 
+  //   }
 
-    if($this->logo_file_name != $file){
-      $this->logo_file_name = $file;
-      $this->save();
-      return true;
-    }
+  //   if($this->logo_file_name != $file){
+  //     $this->logo_file_name = $file;
+  //     $this->save();
+  //     return true;
+  //   }
 
-  }
+  // }
 
   
 
