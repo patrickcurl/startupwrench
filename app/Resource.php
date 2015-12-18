@@ -188,14 +188,14 @@ class Resource extends BaseModel implements SluggableInterface, Reviewable
   public function grab_logo($logo_url)
   { 
     $file = basename($logo_url);
-    if (!file_exists("public/uploads/logos/$file")){
+    if (!file_exists("public/uploads/logos/{$this->slug}")){
       
       try 
       {
         // $this->logo_file_name = $file;
         // create the image and save locally. 
         $img = Image::make($logo_url);
-        if($img->save("public/uploads/logos/{$file}")){
+        if($img->save("public/uploads/logos/{$this->slug}")){
           $this->logo_file_name = $file;
           $this->save();
           return true;
