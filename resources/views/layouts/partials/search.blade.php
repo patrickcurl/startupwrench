@@ -1,5 +1,5 @@
 @section('style')
-  #pagination { position: fixed; bottom: 10px; left: 10px;}
+
 @endsection
 <div id="searchContent" class="container hidden">
 	  {{-- @include('layouts.partials.pagination') --}}
@@ -18,7 +18,8 @@
         @endforeach
       </div>
     </div>
-    </div>
     @include('layouts.partials.pagination')
     @include('layouts.partials.footer');
+    </div>
+    
 </div>
