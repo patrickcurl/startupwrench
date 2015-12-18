@@ -1,135 +1,104 @@
 
 <script type="text/javascript">
       // $(document).ready(function() {
-        function getHost(url) 
-        {
-          var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
-          if ( match != null && match.length > 2 && typeof match[2] === 'string' &&   match[2].length > 0 ) return match[2];
-        }
-        
-        jQuery(document).ready(function($)
-        {
-          var $inputfield = $('#q');
-          // Replace the following values by your ApplicationID and ApiKey.
-          // var client = algoliasearch("{{ env('ALGOLIA_APP_ID') }}", "{{ env('ALGOLIA_SEARCH_ONLY_KEY') }}");
-          // // Replace the following value by the name of the index you want to query.
-          // var index = client.initIndex('resources');
-          // // callback called on each query
-          function searchCallback(err, content) {
-            if (err) 
-            {
-              // error
-              console.log(err);
-              return;
-            }
+        // function getHost(url) 
+        // {
+        //   var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
+        //   if ( match != null && match.length > 2 && typeof match[2] === 'string' &&   match[2].length > 0 ) return match[2];
+        // }
+        function toggleSearch(e){
+          if(e === "show"){
             $('#searchContent').removeClass('hidden');
             $('#mainContent').addClass('hidden');
-            if (content.query != $('#q').val()) 
-            {
-              // do not take out-dated answers into account
-              return;
+          } 
+
+          if(e === "hide") {
+            $('#searchContent').addClass('hidden');
+            $('#mainContent').removeClass('hidden');
           }
-          if (content.hits.length == 0) {
-            // no results
-            $('#hits').empty();
-            $('#pagination').empty();
-            return;
-            
+
+          if(e === "none"){
+            $('#searchContent').addClass('hidden');
+            $('#mainContent').addClass('hidden');
           }
-          console.log(content.hits);
-          // Scan all hits and display them
-          var html = '';
-          for (var i = 0; i < content.hits.length; ++i) {
-
-            var hit = content.hits[i];
-            var resource = hit;
-            //console.log(hit);
-            var hresource = hit._highlightResult;
-            html += '<div class="hit row clearfix">';
-            // console.log(resource.name.value);
-            if(resource.logo != undefined){
-              var logo = resource.logo;
-              
-            } else {
-              var logo = "no-logo.jpg";
-            }
-            // console.log(resource.domain);
-            var slug = resource.slug;
-            var title = hresource.name.value;
-            var url = "{{ url('/resources') }}/" + slug;
-            var description = hresource.description.value;
-            // var domain = getHost(resource.domain.value);
-            var outurl = "{{ url('/out') }}/" + slug;
-            var twitter = resource.twitter;
-            var facebook = resource.facebook;
-            var clicks = resource.clicks;
-            var featured_img = "{{ asset('/uploads/sites') }}/" + resource.featured_image;
-            // var logo = r.logo_file_name.value;
-            
-            html += '<div class="col-md-3"><a href="' + url + '"><img src="/uploads/logos/' + logo + '" class="img-responsive" /></a>';
-            html+= '<div class="well" style="padding:5px;"><a href="' + outurl + '"><i class="fa fa-link"></i> Website</a>';
-
-            if(twitter != undefined){
-              html +='<br /><a href="' + twitter + '" class="resource-link"><i class="fa fa-twitter"></i> Twitter</a>';
-            }
-            if(facebook != undefined){
-              html += '<br /><a href="' + facebook + '" class="resource-link"><i class="fa fa-facebook"></i> Facebook</a>';
-            }
-
-            if(clicks != undefined){
-              html += '<br /><strong>Clicks: ' + clicks + '</strong>';
-            }
-            
-            html += "</div></div><div class='col-md-9'><a href='"+url+"'><h1>" + title + "</h1></a><a href='"+url+"'><img src='" + featured_img + "' class='img-responsive'></a><p>" + description + "</p><p><a href='"+url+"'><i class='fa fa-arrow-circle-right'></i> Read More ...</p></div>";
-            // for (var attribute in hit._highlightResult) {
-
-            //   html += '<div class="attribute">' +
-            //     '<span>' + attribute + ': </span>' +
-            //     hit._highlightResult[attribute].value +
-            //     '</div>';
-            // }
-            html += '</div>';
-          }
-          $('#hits').html(html);
-          // initialize the paginator
-          $('#pagination').bootstrapPaginator({
-            currentPage: (content.page + 1), // Algolia's pagination starts at 0
-            totalPages: content.nbPages,
-            bootstrapMajorVersion: 3,
-            onPageClicked: function(event, originalEvent, type, page) {
-              // if a page is clicked, go to next page performing an additional query
-              search(content.query, { page: (page - 1) }); // Algolia's pagination starts at 0
-              // and update the location to embed the page number
-              location.replace('#q=' + encodeURIComponent(content.query) + '&page=' + page);
-            }
-          });
         }
-        // perform a search
-        function search(apiUrl){
+
+        jQuery(document).ready(function($)
+        {
+          // toggleSearch("none");
+          var $queryField = $('#s');
+          // if($('#s').val() != undefined){
+            
+          //   search($('#s').val());
+          // }
+          $('#s').keyup(function(){
+            // var query =
+            var query = $('#s').val(); 
+            if (query != ""){
+               $('#searchContent').removeClass('hidden');
+               $('#mainContent').addClass('hidden');
+               
+               search(query);
+               toggleSearch("show");
+            } else {
+              toggleSearch('hide')
+            }
+            console.log($inputfield);
+            location.replace('#q=' + encodeURIComponent(query));
+            
+        }).focus().closest('form').on('submit', function() {
+          // on form submit, store the query string in the anchor
+          location.replace('#q=' + encodeURIComponent($inputfield.val()));
+          return false;
+        });
+
+        if (location.hash && location.hash.indexOf('#q=') === 0) {
+          toggleSearch('show');
+          console.log("this is tru");
+          var params = location.hash.substring(3);
+          var pageParamOffset = params.indexOf('&page=');
+          var q, page;
+          if (pageParamOffset > -1) {
+            q = decodeURIComponent(params.substring(0, pageParamOffset));
+            page = params.substring(pageParamOffset).split('=')[1];
+          } else {
+            q = decodeURIComponent(params);
+            page = 1;
+          }
+          // fill the form
+          // $('#s').val(q); 
+          // perform the search
+          console.log(q);
+          console.log(page);
+
+          search(q, page);
+        }
+
+      });
+      function search(query, page)
+        {
+        
+          var apiUrl = "/api/resource/search/" + query +"?page=" + page;    
           $.getJSON(apiUrl, function(data) 
             {
-              if (data.length == 0) 
+              console.log(data.total);
+              if (data.total == undefined && data.total < 1) 
               {
+                console.log(data.total);
                 // no results
                 $('#hits').empty();
                 $('#pagination').empty();
                 return;  
               }
               var html = '';
-
-              console.log(data.length);
-              $.each(data, function(key, val)
+              // console.log(data.total);
+              // console.log(data.length);
+              $.each(data.data, function(key, val)
               {
                 html += '<div class="hit row clearfix">';
                 // console.log(resource.name.value);
                 var resource = val;
-                // if(resource.logo != undefined)
-                // {
-                //   var logo = resource.logo;
-                // } else 
-                // {
-                //   var logo = "no-logo.jpg";
-                // }
+               
                 
                 var url = "{{ url('/resources') }}/" + resource.slug;
                 var outurl = "{{ url('/out') }}/" + resource.slug;
@@ -179,74 +148,67 @@
                 html += "<p>" + resource.description + "</p><p><a href='"+url+"'><i class='fa fa-arrow-circle-right'></i> Read More ...</p></div>";
                 html += '</div>';
               });
-
+              
               $('#hits').html(html);
+              $('#pagination').bootstrapPaginator({
+                currentPage: data.current_page, // Algolia's pagination starts at 0
+                nextPage: (data.current_page +1),
+                totalPages: data.last_page,
+                bootstrapMajorVersion: 3,
+                onPageClicked: function(event, originalEvent, type, page) {
+                  // if a page is clicked, go to next page performing an additional query
+                  
+                  
+                  if(query === undefined){query = $('#s').val()}
+                    console.log(query);
+                  location.replace('#q=' + encodeURIComponent(query) + '&page=' + page);
+                  search(query, page); 
+                }
+              });
               
             });
         }
-
-        $('#s').keyup(function(){
-            var searchField = $('#search').val();
-            var regex = new RegExp(searchField, "i");
-            var output = '<div class="row">';
-            var count = 1;
-            // var query =
-            var query = $('#s').val(); 
-            var apiUrl = "/api/resource/search/" + query;
-
-            if(query.length > 1){
-              $('#searchContent').removeClass('hidden');
-              $('#mainContent').addClass('hidden');
-              search(apiUrl);
-            } else {
-              $('#searchContent').addClass('hidden');
-              $('#mainContent').removeClass('hidden');
-            }
-             
-            
-        });
-      });
         // function search(q, params) {
         //   index.search(q, params, searchCallback);
         // }
         // events binding
-      //   $inputfield.keyup(function() {
-      //     if($inputfield.val() != ""){
+        // $inputfield.keyup(function() {
+        //   if($inputfield.val() != ""){
 
-      //       $('#searchContent').removeClass('hidden');
-      //     $('#mainContent').addClass('hidden');
+        //     $('#searchContent').removeClass('hidden');
+        //   $('#mainContent').addClass('hidden');
 
-      //     // on each keystroke, perform the query
-      //     console.log($inputfield.val());
-      //     search($inputfield.val());
-      //     } else {
-      //       $('#searchContent').addClass('hidden');
-      //     $('#mainContent').removeClass('hidden');
-      //     }
-      //     location.replace('#q=' + encodeURIComponent($inputfield.val()));
-      //   }).focus().closest('form').on('submit', function() {
-      //     // on form submit, store the query string in the anchor
-      //     location.replace('#q=' + encodeURIComponent($inputfield.val()));
-      //     return false;
-      //   });
-      //   // check if there is a query+page in the anchor: http://example.org/#q=my+query&page=42
-      //   if (location.hash && location.hash.indexOf('#q=') === 0) {
-      //     var params = location.hash.substring(3);
-      //     var pageParamOffset = params.indexOf('&page=');
-      //     var q, page;
-      //     if (pageParamOffset > -1) {
-      //       q = decodeURIComponent(params.substring(0, pageParamOffset));
-      //       page = params.substring(pageParamOffset).split('=')[1];
-      //     } else {
-      //       q = decodeURIComponent(params);
-      //       page = 1;
-      //     }
-      //     // fill the form
-      //     $inputfield.val(q);
-      //     // perform the search
-      //     search(q, { page: (page - 1) });
-      //   }
-      // });
+        //   // on each keystroke, perform the query
+        //   console.log($inputfield.val());
+        //   search($inputfield.val());
+        //   } else {
+        //     $('#searchContent').addClass('hidden');
+        //   $('#mainContent').removeClass('hidden');
+        //   }
+        //   location.replace('#q=' + encodeURIComponent($inputfield.val()));
+        // }).focus().closest('form').on('submit', function() {
+        //   // on form submit, store the query string in the anchor
+        //   location.replace('#q=' + encodeURIComponent($inputfield.val()));
+        //   return false;
+        // });
+        // // check if there is a query+page in the anchor: http://example.org/#q=my+query&page=42
+        // if (location.hash && location.hash.indexOf('#q=') === 0) {
+        //   var params = location.hash.substring(3);
+        //   var pageParamOffset = params.indexOf('&page=');
+        //   var q, page;
+        //   if (pageParamOffset > -1) {
+        //     q = decodeURIComponent(params.substring(0, pageParamOffset));
+        //     page = params.substring(pageParamOffset).split('=')[1];
+        //   } else {
+        //     q = decodeURIComponent(params);
+        //     page = 1;
+        //   }
+        //   // fill the form
+        //   $inputfield.val(q);
+        //   // perform the search
+        //   search(q, { page: (page - 1) });
+        // }
+     // });
 
      
 

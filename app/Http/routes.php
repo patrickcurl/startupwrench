@@ -29,9 +29,11 @@ Route::get('login', function(){
 });
 
 Route::group(['prefix' => 'api'], function(){
-    Route::get('resource/search/{q}', function($q){
+    Route::get('resource/search/{q}', function($q, $page=null){
         // $q = Input::get('query');
-        $search = App\Resource::search($q, ['name' => 10, 'representation' => 7, 'description' => 6, 'content' => 5])->get();
+        $search = App\Resource::search($q, ['name' => 10, 'representation' => 7, 'description' => 6, 'content' => 5])->paginate(10);
+
+        return $search;
         
         $r = \Response::json($search);
         return $r;
