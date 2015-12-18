@@ -194,7 +194,7 @@
             var query = $('#s').val(); 
             var apiUrl = "/api/resource/search/" + query;
 
-            if(query.length > 2){
+            if(query.length > 1){
               $('#searchContent').removeClass('hidden');
               $('#mainContent').addClass('hidden');
               search(apiUrl);
