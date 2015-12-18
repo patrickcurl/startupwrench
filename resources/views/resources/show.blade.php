@@ -41,9 +41,7 @@ img.scale {
         <h1>{{ $resource->name }}</h1><small>{{ $resource->description }}</small>
       </div>
     </div>
-    <div class="col-md-2">
-    <a href="{{ $resource->getUrl('out') }}"><i class="fa fa-link"></i></a>
-    </div>
+    
   </div>
   <div class="row">
     <div class="col-md-8">
