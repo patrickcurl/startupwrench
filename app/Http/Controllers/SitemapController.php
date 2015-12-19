@@ -31,7 +31,7 @@ class SitemapController extends Controller
 
     foreach ($resources as $resource)
     {
-      $sitemap_resources->add($resource->slug, $resource->updated_at, '.9', 'daily');
+      $sitemap_resources->add(url("/resource/{$resource->slug}"), $resource->updated_at, '.9', 'daily');
     }
 
     // show sitemap
@@ -51,7 +51,7 @@ class SitemapController extends Controller
 
     foreach ($topics as $topic)
     {
-        $sitemap_topics->add($topic->slug, $topic->updated_at, '.9', 'daily');
+        $sitemap_topics->add(url("/topic/{$topic->slug}"), $topic->updated_at, '.9', 'daily');
     }
 
     // show sitemap
