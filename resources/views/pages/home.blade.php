@@ -15,7 +15,7 @@
 @section('content')
             <!-- Features starts -->
 				<div class="features-four">
-
+				{{  $template }}
 				  <h3>Startup Resources</h3>
 				  <p>Browse startups tools below, or search for something specific in the search bar.</p>
 

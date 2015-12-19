@@ -13,7 +13,7 @@ class ResourceController extends Controller
 	public function getIndex($slug = null)
 	{
 		 $resource = Resource::findBySlug($slug);
-		 return view('resources.show', ['resource' => $resource, 'template' => 'resource'])->with('resource', $resource);
+		 return view('resources.show', ['resource' => $resource, 'template' => 'resource']);
 	}
 
 	public function getNew(){

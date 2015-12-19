@@ -66,7 +66,13 @@
     @include('layouts.partials.search')
 
     @if(isset($template) && $template)
-      @include("layouts.templates.$template")
+    	@if($template == "wide")
+      	@include("layouts.templates.wide")
+      @elseif($template == "resource")
+      	@include("layouts.templates.resource")
+      @else
+      	@include("layouts.templates.narrow")
+      @endif
     @else
       @include("layouts.templates.narrow")
     @endif

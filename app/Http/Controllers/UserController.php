@@ -9,7 +9,7 @@ use Auth;
 class UserController extends Controller
 {
 	public function __construct(){
-		$this->middleware('auth', ['except' => ['getTest', 'getSetup', 'postSetup']]);
+		$this->middleware('auth', ['except' => ['getTest', 'getSetup', 'postSetup', 'getLogin']]);
 	}
 
 public function getTest(){
@@ -20,6 +20,10 @@ public function getSetup(){
 	$user = Auth::user();
 	return view('users.setup')->with('user', $user);
 	// return Auth::user()->email;
+}
+
+public function getLogin(){
+	return view('users.login', ['template' => 'wide']);
 }
 
 public function postSetup(Request $request)
@@ -36,6 +40,12 @@ public function postSetup(Request $request)
 	if($user->save()){
 		return redirect('/');
 	}
+	
+}
+
+public function postLogin()
+{
+	
 	
 }
 

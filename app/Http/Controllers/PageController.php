@@ -20,7 +20,7 @@ class PageController extends Controller
 	// }
 
 	public function getHome(){
-		return view('pages.home')->with('wide', true);
+		return view('pages.home', ['template' => 'wide']);
 	}
 
 	public function getPage($page){

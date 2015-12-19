@@ -12,21 +12,20 @@ use SocialNorm\Exceptions\InvalidAuthorizationCodeException;
 |
 */
 
-Route::get('/', function () {
-	  $topics = App\Topic::all()->sortBy('name');
-    return view('pages.home')->with('topics', $topics)->with('wide', true);
-});
+// Route::get('/', function () {
+// 	  $topics = App\Topic::all()->sortBy('name');
+//     return view('pages.home', ['template' => 'wide', 'topics' => $topics]);
+// });
 Route::get('/', 'PageController@getHome');
 Route::post('contact', 'PageController@postContact');
 Route::get('topic/{slug}', 'TopicController@getTopic');
-Route::controller('topic', 'TopicController');
-Route::get('topic/{slug}', 'TopicController@getTopic');
-// Route::get('/page/{page}', 'PageController@getPage');
-Route::controller('page', 'PageController');
 
-Route::get('login', function(){
-    return view('users.login');
-});
+Route::controller('topic', 'TopicController');
+Route::controller('page', 'PageController');
+Route::get('login', 'UserController@getLogin');
+// Route::get('login', function(){
+//     return view('users.login');
+// });
 
 Route::group(['prefix' => 'api'], function(){
     Route::get('resource/search/{q}', function($q, $page=null){
