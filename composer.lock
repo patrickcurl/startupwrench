@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fa4830c6d903c85c7c426348e7296a44",
-    "content-hash": "df8aa42653dc1867b583db0e86bc23b1",
+    "hash": "edfbc47448cac682c89a513da9dd42c9",
+    "content-hash": "d9971c53270b43f67aeb4bdddf967fa9",
     "packages": [
         {
             "name": "adamwathan/eloquent-oauth",
@@ -105,104 +105,6 @@
             "time": "2015-09-13 13:57:46"
         },
         {
-            "name": "algolia/algoliasearch-client-php",
-            "version": "1.6.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/algolia/algoliasearch-client-php.git",
-                "reference": "cb3a70a451f1d7883eebe1ce13c9d6e343df4f89"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/cb3a70a451f1d7883eebe1ce13c9d6e343df4f89",
-                "reference": "cb3a70a451f1d7883eebe1ce13c9d6e343df4f89",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8 || ^5.0",
-                "satooshi/php-coveralls": "0.6.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "AlgoliaSearch": "src/",
-                    "AlgoliaSearch\\Tests": "tests/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Algolia Team",
-                    "email": "contact@algolia.com"
-                },
-                {
-                    "name": "Ryan T. Catlin",
-                    "email": "ryan.catlin@gmail.com"
-                },
-                {
-                    "name": "Jonathan H. Wage",
-                    "email": "jonwage@gmail.com"
-                }
-            ],
-            "description": "Algolia Search API Client for PHP",
-            "homepage": "https://github.com/algolia/algoliasearch-client-php",
-            "time": "2015-12-07 09:43:01"
-        },
-        {
-            "name": "algolia/algoliasearch-laravel",
-            "version": "1.0.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/algolia/algoliasearch-laravel.git",
-                "reference": "f87ab9704cbf520b0f21820ee5652017609638fb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-laravel/zipball/f87ab9704cbf520b0f21820ee5652017609638fb",
-                "reference": "f87ab9704cbf520b0f21820ee5652017609638fb",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9",
-                "vinkla/algolia": "~2.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9",
-                "orchestra/testbench": "3.1.*",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "AlgoliaSearch\\Laravel\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Laravel Algolia extension",
-            "keywords": [
-                "algolia",
-                "api",
-                "laravel",
-                "search"
-            ],
-            "time": "2015-11-18 14:52:34"
-        },
-        {
             "name": "anam/phantommagick",
             "version": "v1.0.1",
             "source": {
@@ -262,6 +164,133 @@
                 "phantomjs"
             ],
             "time": "2015-12-07 18:01:37"
+        },
+        {
+            "name": "arcanedev/seo-helper",
+            "version": "0.17.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ARCANEDEV/SEO-Helper.git",
+                "reference": "410af915953a611b56fb7f7ce4edfc6609cf22ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ARCANEDEV/SEO-Helper/zipball/410af915953a611b56fb7f7ce4edfc6609cf22ea",
+                "reference": "410af915953a611b56fb7f7ce4edfc6609cf22ea",
+                "shasum": ""
+            },
+            "require": {
+                "arcanedev/support": "~3.0",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.1",
+                "phpunit/phpcov": "~2.0",
+                "phpunit/phpunit": "~4.0|~5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Arcanedev\\SeoHelper\\": "src/"
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ARCANEDEV",
+                    "email": "arcanedev.maroc@gmail.com",
+                    "homepage": "https://github.com/ARCANEDEV",
+                    "role": "Developer"
+                }
+            ],
+            "description": "SEO Helper is a package for Laravel 5 that provides tools and helpers for SEO.",
+            "homepage": "https://github.com/ARCANEDEV/SEO-Helper",
+            "keywords": [
+                "Alexa",
+                "OpenGraph Protocol",
+                "bing",
+                "google",
+                "helper",
+                "laravel",
+                "og",
+                "opengraph",
+                "seo",
+                "twitter",
+                "webmaster",
+                "yandex"
+            ],
+            "time": "2015-12-14 19:03:23"
+        },
+        {
+            "name": "arcanedev/support",
+            "version": "3.6.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ARCANEDEV/Support.git",
+                "reference": "e5f1557b8e570bce7de3d40cde4311559042d15e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ARCANEDEV/Support/zipball/e5f1557b8e570bce7de3d40cde4311559042d15e",
+                "reference": "e5f1557b8e570bce7de3d40cde4311559042d15e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpcov": "~2.0",
+                "phpunit/phpunit": "~4.0|~5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Arcanedev\\Support\\": "src/"
+                },
+                "files": [
+                    "constants.php",
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ARCANEDEV",
+                    "email": "arcanedev.maroc@gmail.com",
+                    "homepage": "https://github.com/arcanedev-maroc"
+                }
+            ],
+            "description": "ARCANEDEV Support Helpers",
+            "homepage": "https://github.com/ARCANEDEV/Support",
+            "keywords": [
+                "arcanedev",
+                "arcanesoft",
+                "laravel",
+                "support"
+            ],
+            "time": "2015-12-19 14:21:36"
         },
         {
             "name": "aws/aws-sdk-php",
@@ -871,16 +900,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.5.2",
+            "version": "v1.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "47c7128262da274f590ae6f86eb137a7a64e82af"
+                "reference": "47cdc76ceb95cc591d9c79a36dc3794975b5d136"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/47c7128262da274f590ae6f86eb137a7a64e82af",
-                "reference": "47c7128262da274f590ae6f86eb137a7a64e82af",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/47cdc76ceb95cc591d9c79a36dc3794975b5d136",
+                "reference": "47cdc76ceb95cc591d9c79a36dc3794975b5d136",
                 "shasum": ""
             },
             "require": {
@@ -937,7 +966,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-12-03 10:50:37"
+            "time": "2015-12-19 05:03:47"
         },
         {
             "name": "doctrine/collections",
@@ -2438,16 +2467,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.1.26",
+            "version": "v5.1.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "be7fbb60376bd61f07e9c637473e5b2cf7eebe5c"
+                "reference": "b16f80878fd3603022d3c84593397cedd9af0bcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/be7fbb60376bd61f07e9c637473e5b2cf7eebe5c",
-                "reference": "be7fbb60376bd61f07e9c637473e5b2cf7eebe5c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/b16f80878fd3603022d3c84593397cedd9af0bcf",
+                "reference": "b16f80878fd3603022d3c84593397cedd9af0bcf",
                 "shasum": ""
             },
             "require": {
@@ -2493,7 +2522,6 @@
                 "illuminate/events": "self.version",
                 "illuminate/exception": "self.version",
                 "illuminate/filesystem": "self.version",
-                "illuminate/foundation": "self.version",
                 "illuminate/hashing": "self.version",
                 "illuminate/http": "self.version",
                 "illuminate/log": "self.version",
@@ -2563,7 +2591,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-12-02 21:59:57"
+            "time": "2015-12-17 20:35:38"
         },
         {
             "name": "laravelcollective/html",
@@ -3424,16 +3452,16 @@
         },
         {
             "name": "roumen/sitemap",
-            "version": "v2.5.6",
+            "version": "v2.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RoumenDamianoff/laravel-sitemap.git",
-                "reference": "9e7044dd0ee919de2f37ebb8ae0bbb541c61e86a"
+                "reference": "637e094b2f5e1e56389845dcd3f0e8db4c2f05d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-sitemap/zipball/9e7044dd0ee919de2f37ebb8ae0bbb541c61e86a",
-                "reference": "9e7044dd0ee919de2f37ebb8ae0bbb541c61e86a",
+                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-sitemap/zipball/637e094b2f5e1e56389845dcd3f0e8db4c2f05d9",
+                "reference": "637e094b2f5e1e56389845dcd3f0e8db4c2f05d9",
                 "shasum": ""
             },
             "require": {
@@ -3468,7 +3496,7 @@
                 "generator",
                 "laravel"
             ],
-            "time": "2015-10-03 08:11:47"
+            "time": "2015-12-17 17:30:38"
         },
         {
             "name": "socialnorm/facebook",
@@ -4791,62 +4819,6 @@
                 "dump"
             ],
             "time": "2015-11-18 13:41:01"
-        },
-        {
-            "name": "vinkla/algolia",
-            "version": "2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vinkla/algolia.git",
-                "reference": "ced485824a5d583ececb43d4df53e02e5a8a7148"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vinkla/algolia/zipball/ced485824a5d583ececb43d4df53e02e5a8a7148",
-                "reference": "ced485824a5d583ececb43d4df53e02e5a8a7148",
-                "shasum": ""
-            },
-            "require": {
-                "algolia/algoliasearch-client-php": "^1.6",
-                "graham-campbell/manager": "^2.3",
-                "illuminate/contracts": "5.1.* || 5.2.*",
-                "illuminate/support": "5.1.* || 5.2.*",
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "graham-campbell/testbench": "^3.1",
-                "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "^4.8 || ^5.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Vinkla\\Algolia\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Vincent Klaiber",
-                    "email": "hello@vinkla.com"
-                }
-            ],
-            "description": "An Algolia bridge for Laravel",
-            "keywords": [
-                "algolia",
-                "api",
-                "laravel",
-                "search"
-            ],
-            "time": "2015-11-14 18:50:04"
         },
         {
             "name": "vlucas/phpdotenv",

@@ -110,9 +110,9 @@ Route::get('/go/{slug}', function($slug){
 Route::get('/out/{slug}', function($slug){
     $resource = App\Resource::findBySlug($slug);
     if($resource->afflink){
-        $url = $resource->afflink;
+        $url = $resource->afflink . "?startupwrench";
     } else {
-       $url = $resource->domain; 
+       $url = $resource->domain . "?startupwrench"; 
     }
     $resource->clicks += 1;
     $resource->save();

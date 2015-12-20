@@ -153,7 +153,7 @@ return [
         Codesleeve\LaravelStapler\Providers\L5ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         AdamWathan\EloquentOAuthL5\EloquentOAuthServiceProvider::class,
-        AlgoliaSearch\Laravel\AlgoliaServiceProvider::class,
+        
         Roumen\Sitemap\SitemapServiceProvider::class,
         HieuLe\LaravelDashboard\LaravelDashboardServiceProvider::class,
         HieuLe\LaravelMenu\LaravelMenuServiceProvider::class,
@@ -164,6 +164,7 @@ return [
        // Laracasts\Flash\FlashServiceProvider::class,
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
         Sofa\Eloquence\ServiceProvider::class,
+        Arcanedev\SeoHelper\SeoHelperServiceProvider::class,
     ],
 
     /*
@@ -225,6 +226,7 @@ return [
        // 'Flash'      => Laracasts\Flash\Flash::class,
        // 'GitHub'     => GrahamCampbell\GitHub\Facades\GitHub::class,
         'Recaptcha'  => Greggilbert\Recaptcha\Facades\Recaptcha::class,
+        'SeoHelper'    => Arcanedev\SeoHelper\Facades\SeoHelper::class,
     ],
 
 ];
