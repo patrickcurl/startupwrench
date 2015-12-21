@@ -34,7 +34,7 @@
 @section('content')
             <!-- Features starts -->
 				<div class="features-four">
-				{{  $template }}
+				
 				  <h3>Startup Resources</h3>
 				  <p>Browse startups tools below, or search for something specific in the search bar.</p>
 
@@ -46,7 +46,7 @@
 				  	?>
 				  	@foreach($topics as $topic)
 				  		
-					  	<div class="col-md-3 {{ $colors[$count] }} clickable" style="min-height:70px;margin: 0px 0px;}}">
+					  	<div class="col-md-3 col-sm-12 {{ $colors[$count] }} clickable" style="min-height:70px;margin: 0px 0px;}}">
 								<a href="{{ url("/topic/{$topic->slug}") }}"><h4 style="color:#FFFFFF">{!! $topic->name !!}</h4></a>
 						  </div>
 						  <div class="col-md-offset-1"></div>

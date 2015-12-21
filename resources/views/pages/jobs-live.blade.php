@@ -54,8 +54,8 @@
 
         
      
-     @foreach($jobs->all() as $job)
-     		<div class="service-content">
+     {{-- @foreach($jobs->all() as $job) --}}
+     		{{-- <div class="service-content">
      			<div class="col-md-8">
      				<h5><a href="{{ $job->url }}">{{ $job->company }}</a></h5>
      			</div>
@@ -66,20 +66,20 @@
      			<div class="col-md-12">
      				<p>{{ $job->description }}</p>
      			</div>
-     		</div>
-     @endforeach
+     		</div> --}}
+     {{-- @endforeach --}}
 
         
         <!-- Service #4 -->
-
-        <div class="service-icon purple">
+        <h3>Coming soon</h3>
+       {{--  <div class="service-icon purple">
           <i class="fa fa-user"></i>
         </div>
 
         <div class="service-content">
           <h5><a href="">Top Notch Support</h5>
           <p>Aenean sodales augue ac lacus hendrerit sed rhoncus erat hendrerit. Vivamus vel ultricies elit.</p>
-        </div>
+        </div> --}}
         
         <br>
 

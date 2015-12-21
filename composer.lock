@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "edfbc47448cac682c89a513da9dd42c9",
-    "content-hash": "d9971c53270b43f67aeb4bdddf967fa9",
+    "hash": "daebbc6c2dc65e1c3e7b5eee270b806a",
+    "content-hash": "c85bfacc451fe7dd96fa4aa77d5e3970",
     "packages": [
         {
             "name": "adamwathan/eloquent-oauth",
@@ -357,28 +357,28 @@
         },
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v2.0.6",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "23672cbbe78278ff1fdb258caa0b1de7b5d0bc0c"
+                "reference": "25ce9052c89a262cfda1d410940a552efb9ae85c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/23672cbbe78278ff1fdb258caa0b1de7b5d0bc0c",
-                "reference": "23672cbbe78278ff1fdb258caa0b1de7b5d0bc0c",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/25ce9052c89a262cfda1d410940a552efb9ae85c",
+                "reference": "25ce9052c89a262cfda1d410940a552efb9ae85c",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "~5.0.17|5.1.*",
-                "maximebf/debugbar": "~1.10.2",
+                "illuminate/support": "~5.0.17|5.1.*|5.2.*",
+                "maximebf/debugbar": "~1.11.0",
                 "php": ">=5.4.0",
-                "symfony/finder": "~2.6"
+                "symfony/finder": "~2.6|~3.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1-dev"
+                    "dev-master": "2.2-dev"
                 }
             },
             "autoload": {
@@ -407,26 +407,26 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2015-09-09 11:39:27"
+            "time": "2015-12-21 19:07:38"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
-            "version": "v2.1.0",
+            "version": "v2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-                "reference": "83999f8467374adcb8893f566c9171c9d9691f50"
+                "reference": "d82e8f191fb043a0f8cbf2de64fd3027bfa4f772"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/83999f8467374adcb8893f566c9171c9d9691f50",
-                "reference": "83999f8467374adcb8893f566c9171c9d9691f50",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/d82e8f191fb043a0f8cbf2de64fd3027bfa4f772",
+                "reference": "d82e8f191fb043a0f8cbf2de64fd3027bfa4f772",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "5.0.x|5.1.x",
-                "illuminate/filesystem": "5.0.x|5.1.x",
-                "illuminate/support": "5.0.x|5.1.x",
+                "illuminate/console": "5.0.x|5.1.x|5.2.x",
+                "illuminate/filesystem": "5.0.x|5.1.x|5.2.x",
+                "illuminate/support": "5.0.x|5.1.x|5.2.x",
                 "php": ">=5.4.0",
                 "phpdocumentor/reflection-docblock": "2.0.4",
                 "symfony/class-loader": "~2.3"
@@ -470,7 +470,7 @@
                 "phpstorm",
                 "sublime"
             ],
-            "time": "2015-08-13 11:40:00"
+            "time": "2015-12-21 19:48:06"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -1298,6 +1298,58 @@
                 "parser"
             ],
             "time": "2014-09-09 13:34:57"
+        },
+        {
+            "name": "geoip2/geoip2",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maxmind/GeoIP2-php.git",
+                "reference": "01f58d749b715f30c99d1b19a965ce5b93813656"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/GeoIP2-php/zipball/01f58d749b715f30c99d1b19a965ce5b93813656",
+                "reference": "01f58d749b715f30c99d1b19a965ce5b93813656",
+                "shasum": ""
+            },
+            "require": {
+                "guzzle/guzzle": "3.*",
+                "maxmind-db/reader": "~1.0",
+                "php": ">=5.3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.2.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "GeoIp2": "src/",
+                    "JsonSerializable": "compat/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "http://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind GeoIP2 PHP API",
+            "homepage": "https://github.com/maxmind/GeoIP2-php",
+            "keywords": [
+                "IP",
+                "geoip",
+                "geoip2",
+                "geolocation",
+                "maxmind"
+            ],
+            "time": "2014-12-03 14:59:16"
         },
         {
             "name": "graham-campbell/github",
@@ -2362,6 +2414,113 @@
             "time": "2015-12-05 17:17:57"
         },
         {
+            "name": "jobbrander/jobs-common",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JobBrander/jobs-common.git",
+                "reference": "19ab1d7127bdc0a7ff521683531f51237a5dae35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JobBrander/jobs-common/zipball/19ab1d7127bdc0a7ff521683531f51237a5dae35",
+                "reference": "19ab1d7127bdc0a7ff521683531f51237a5dae35",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "dunglas/php-schema": "0.4.*",
+                "mockery/mockery": ">=0.9.4",
+                "phpunit/php-code-coverage": "~2.0",
+                "phpunit/phpunit": ">=4.6",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JobBrander\\Jobs\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Steven Maguire",
+                    "email": "stevenmaguire@gmail.com",
+                    "homepage": "https://github.com/stevenmaguire"
+                },
+                {
+                    "name": "Karl Hughes",
+                    "email": "khughes.me@gmail.com",
+                    "homepage": "http://www.karllhughes.com"
+                }
+            ],
+            "description": "Making it simple to integrate your application with job api providers.",
+            "homepage": "https://github.com/JobBrander/jobs-common",
+            "keywords": [
+                "api client",
+                "jobs",
+                "object"
+            ],
+            "time": "2015-10-28 17:19:54"
+        },
+        {
+            "name": "jobbrander/jobs-indeed",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JobBrander/jobs-indeed.git",
+                "reference": "6cbf0d6518cd84fac11a6ab34131e306171f02d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JobBrander/jobs-indeed/zipball/6cbf0d6518cd84fac11a6ab34131e306171f02d8",
+                "reference": "6cbf0d6518cd84fac11a6ab34131e306171f02d8",
+                "shasum": ""
+            },
+            "require": {
+                "jobbrander/jobs-common": "~1.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": ">=0.9.4",
+                "phpunit/php-code-coverage": "~2.0",
+                "phpunit/phpunit": ">=4.6",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JobBrander\\Jobs\\Client\\Providers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Steven Maguire",
+                    "email": "stevenmaguire@gmail.com",
+                    "homepage": "https://github.com/stevenmaguire"
+                }
+            ],
+            "description": "Making it simple to integrate your application with Indeed Jobs API.",
+            "homepage": "https://github.com/JobBrander/jobs-indeed",
+            "keywords": [
+                "api client",
+                "indeed",
+                "jobs",
+                "object"
+            ],
+            "time": "2015-09-01 20:32:02"
+        },
+        {
             "name": "knplabs/github-api",
             "version": "1.5.1",
             "source": {
@@ -2691,16 +2850,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.15",
+            "version": "1.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "31525caf9e8772683672fefd8a1ca0c0736020f4"
+                "reference": "183e1a610664baf6dcd6fceda415baf43cbdc031"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/31525caf9e8772683672fefd8a1ca0c0736020f4",
-                "reference": "31525caf9e8772683672fefd8a1ca0c0736020f4",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/183e1a610664baf6dcd6fceda415baf43cbdc031",
+                "reference": "183e1a610664baf6dcd6fceda415baf43cbdc031",
                 "shasum": ""
             },
             "require": {
@@ -2714,7 +2873,7 @@
                 "mockery/mockery": "~0.9",
                 "phpspec/phpspec": "^2.2",
                 "phpspec/prophecy-phpunit": "~1.0",
-                "phpunit/phpunit": "~4.1"
+                "phpunit/phpunit": "~4.8"
             },
             "suggest": {
                 "ext-fileinfo": "Required for MimeType",
@@ -2771,7 +2930,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-09-30 22:26:59"
+            "time": "2015-12-19 20:16:43"
         },
         {
             "name": "league/flysystem-aws-s3-v2",
@@ -2822,25 +2981,25 @@
         },
         {
             "name": "maximebf/debugbar",
-            "version": "v1.10.5",
+            "version": "v1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maximebf/php-debugbar.git",
-                "reference": "30e53e8a28284b69dd223c9f5ee8957befd72636"
+                "reference": "07741d84d39d10f00551c94284cdefcc69703e77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/30e53e8a28284b69dd223c9f5ee8957befd72636",
-                "reference": "30e53e8a28284b69dd223c9f5ee8957befd72636",
+                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/07741d84d39d10f00551c94284cdefcc69703e77",
+                "reference": "07741d84d39d10f00551c94284cdefcc69703e77",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
-                "psr/log": "~1.0",
-                "symfony/var-dumper": "~2.6"
+                "psr/log": "^1.0",
+                "symfony/var-dumper": "^2.6|^3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "^4.0|^5.0"
             },
             "suggest": {
                 "kriswallsmith/assetic": "The best way to manage assets",
@@ -2850,12 +3009,12 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.10-dev"
+                    "dev-master": "1.11-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "DebugBar": "src/"
+                "psr-4": {
+                    "DebugBar\\": "src/DebugBar/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2867,14 +3026,68 @@
                     "name": "Maxime Bouroumeau-Fuseau",
                     "email": "maxime.bouroumeau@gmail.com",
                     "homepage": "http://maximebf.com"
+                },
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
                 }
             ],
             "description": "Debug bar in the browser for php application",
             "homepage": "https://github.com/maximebf/php-debugbar",
             "keywords": [
-                "debug"
+                "debug",
+                "debugbar"
             ],
-            "time": "2015-10-19 20:35:12"
+            "time": "2015-12-10 09:50:24"
+        },
+        {
+            "name": "maxmind-db/reader",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maxmind/MaxMind-DB-Reader-php.git",
+                "reference": "07f211ab596ba60f9663d9984b888f76ee1beac9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/MaxMind-DB-Reader-php/zipball/07f211ab596ba60f9663d9984b888f76ee1beac9",
+                "reference": "07f211ab596ba60f9663d9984b888f76ee1beac9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.2.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "MaxMind": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "http://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind DB Reader API",
+            "homepage": "https://github.com/maxmind/MaxMind-DB-Reader-php",
+            "keywords": [
+                "database",
+                "geoip",
+                "geoip2",
+                "geolocation",
+                "maxmind"
+            ],
+            "time": "2015-03-13 22:35:13"
         },
         {
             "name": "monolog/monolog",
@@ -3892,6 +4105,56 @@
                 "laravel"
             ],
             "time": "2015-11-17 15:31:14"
+        },
+        {
+            "name": "stevebauman/location",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stevebauman/location.git",
+                "reference": "7a9fdaa7591c556f49f86cdf82d2f9f480419d6b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stevebauman/location/zipball/7a9fdaa7591c556f49f86cdf82d2f9f480419d6b",
+                "reference": "7a9fdaa7591c556f49f86cdf82d2f9f480419d6b",
+                "shasum": ""
+            },
+            "require": {
+                "geoip2/geoip2": "2.1.*",
+                "illuminate/support": "5.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "orchestra/testbench": "3.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stevebauman\\Location\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Bauman",
+                    "email": "steven_bauman@outlook.com"
+                }
+            ],
+            "description": "Retrieve a users location by their IP Address using Laravel 4 / 5",
+            "keywords": [
+                "IP",
+                "geo",
+                "geo-location",
+                "geoip",
+                "laravel",
+                "location",
+                "php"
+            ],
+            "time": "2015-12-01 15:29:14"
         },
         {
             "name": "swiftmailer/swiftmailer",

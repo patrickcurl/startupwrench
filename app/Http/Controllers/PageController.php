@@ -24,13 +24,13 @@ class PageController extends Controller
 	}
 
 	public function getPage($page){
-		$wide = ['contact', 'home'];
+		$wide = ['contact', 'home', 'jobs'];
 	
 		foreach($wide as $w){
 
 			if($w == $page){
 
-				return view("pages.$page")->with('wide', true);
+				return view("pages.$page")->with('template', "wide");
 			}
 		}
 

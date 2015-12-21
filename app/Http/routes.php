@@ -23,6 +23,11 @@ Route::get('topic/{slug}', 'TopicController@getTopic');
 Route::controller('topic', 'TopicController');
 Route::controller('page', 'PageController');
 Route::get('login', 'UserController@getLogin');
+Route::get('jobs', function(){
+    $jobs = App\Job::getJobs();
+
+    return view('pages.jobs-live', ['jobs' => $jobs, 'template' => 'wide']);
+});
 // Route::get('login', function(){
 //     return view('users.login');
 // });
@@ -104,6 +109,8 @@ Route::get('/go/{slug}', function($slug){
     switch($slug){
         case "inmotion":
         return redirect("https://secure1.inmotionhosting.com/cgi-bin/gby/clickthru.cgi?id=patrickcurl&page=3");
+        case "resume-rabbit":
+        return redirect("http://www.anrdoezrs.net/click-7952756-10440471-1313778077000");
     }
 });
 
