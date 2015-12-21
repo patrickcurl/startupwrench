@@ -11,3 +11,5 @@ scraper.rb
 sites.txt
 sitemap.xml
 startdev.sql
+boostrap/cache/
+storage/
