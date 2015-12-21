@@ -4,7 +4,7 @@
       xmlns:fb="http://ogp.me/ns/fb#"
       >
 	<head>
-	<meta property="og:image" content="{{ asset('/uploads/startupwrench-screenshot.jpg') }}" />
+	<meta property="og:image" content="{{ asset('/uploads/startupwrench-screenshot.png') }}" />
 
 		<meta charset="utf-8">
 		<!-- Title here -->
