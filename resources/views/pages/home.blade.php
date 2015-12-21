@@ -28,7 +28,7 @@
 
 
 	</style>
-
+K, I'm a bit desperate for work - I'm a mid-level PHP Developer, my latest project is: http://startupwrench.com --- willing to work
 	
 @endsection
 @section('content')
@@ -46,7 +46,7 @@
 				  	?>
 				  	@foreach($topics as $topic)
 				  		
-					  	<div class="col-md-3 col-sm-12 {{ $colors[$count] }} clickable" style="min-height:70px;margin: 0px 0px;}}">
+					  	<div class="col-md-3 col-xs-12 col-sm-12 {{ $colors[$count] }} clickable" style="min-height:70px;margin: 0px 0px;}}">
 								<a href="{{ url("/topic/{$topic->slug}") }}"><h4 style="color:#FFFFFF">{!! $topic->name !!}</h4></a>
 						  </div>
 						  <div class="col-md-offset-1"></div>
