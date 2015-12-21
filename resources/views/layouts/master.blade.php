@@ -6,7 +6,7 @@
 	<head>
 	<meta property="og:title" content="StartupWrench :: Tools and resources for startups, as well as job listings, and more." />
 	<meta property="og:image" content="{{ asset('/uploads/startupwrench-screenshot.png') }}" />
-	<meta property="og:url" content="http://startupwrench.com/"
+	<meta property="og:url" content="http://startupwrench.com/">
   <meta property="fb:app_id" content="{{ env('FB_CLIENT_ID') }}"/>
 		<meta charset="utf-8">
 		<!-- Title here -->
