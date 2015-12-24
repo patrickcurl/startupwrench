@@ -30,7 +30,10 @@
         "sofa/eloquence": "~5.1@dev",
         "arcanedev/seo-helper": "~0.15",
         "stevebauman/location": "1.3.*",
-        "jobbrander/jobs-indeed": "^0.4.0"
+        "jobbrander/jobs-indeed": "^0.4.0",
+        "jobbrander/jobs-simplyhired": "^0.4.0",
+        "jobbrander/jobs-dice": "^0.3.0",
+        "startupwrench/jobfeed": "dev-master"
 
 
     },
@@ -72,8 +75,8 @@
             "php artisan key:generate"
         ]
     },
+    "minimum-stability": "dev",
     "config": {
-        "preferred-install": "dist",
-        "minimum-stability": "dev"
+        "preferred-install": "dist"
     }
 }

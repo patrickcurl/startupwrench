@@ -46,7 +46,12 @@ Route::group(['prefix' => 'api'], function(){
 
     Route::get('test', function(){
         return 'testing';
-    }); 
+    });
+
+    Route::get('jobs', function(){
+        $j = new App\JobFeed();
+        return \Response::json($j->jobs());
+    });
 });
 
 Route::post('login', 'Auth\AuthController@postLogin');

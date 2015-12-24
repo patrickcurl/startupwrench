@@ -165,6 +165,7 @@ return [
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
         Sofa\Eloquence\ServiceProvider::class,
         Arcanedev\SeoHelper\SeoHelperServiceProvider::class,
+        // Bernardino\SimpleAdmin\SimpleAdminServiceProvider::class,
     ],
 
     /*
