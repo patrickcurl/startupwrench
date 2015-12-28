@@ -28,7 +28,7 @@
     </style>
 		@yield('head')
 	</head>
-	<body>
+		<body>
 
 		<!-- Header Starts -->
 		<header>
@@ -53,8 +53,6 @@
 			</div>
 		  </div>
 		</header>
-
-		
 		@include('layouts.partials.nav')
     @section('content-top')
     @show
@@ -71,22 +69,12 @@
     </div>
     @endif
     @include('layouts.partials.search')
-
-    @if(isset($template) && $template)
-    	@if($template == "wide")
-      	@include("layouts.templates.wide")
-      @elseif($template == "resource")
-      	@include("layouts.templates.resource")
-      @else
-      	@include("layouts.templates.narrow")
-      @endif
-    @else
-      @include("layouts.templates.narrow")
-    @endif
-    	     
-			<a href="{{ url('/resource') }}/new" class="btn btn-primary" id="fixedbutton" >Add Resource</a>
-			{{--  @yield('footer') --}}
-			@include('layouts.partials.footer')
+    <div id="mainContent" class="container">
+  
+      @yield('content')
+  
+		</div>
+<?php /* @include('layouts.partials.footer') */ ?>
 			<!-- Footer -->
 		 
 			{!! Fluent::scripts() !!}
@@ -96,22 +84,3 @@
 			@section('custom_scripts')
 			@show
 		</body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -2,6 +2,7 @@
 
 return [
 	'route' => 'jobs',
+	'layout' => 'layouts.jobs', // Layout that job listings should extend
 	'indeed' => [
 		'enabled' => true,
 		'id' => env('INDEED_KEY', 'putkeyhere'), // put publisher id here. 

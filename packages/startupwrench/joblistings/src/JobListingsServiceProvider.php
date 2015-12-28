@@ -26,7 +26,10 @@ class JobListingsServiceProvider extends ServiceProvider
         // use this if your package needs a config file
         $this->publishes([
             __DIR__.'/config/config.php' => config_path('joblistings.php'),
+            __DIR__.'/resources/views' => base_path('resources/views/vendor/joblistings'),
         ]);
+
+
         
         //use the vendor configuration file as fallback
         $this->mergeConfigFrom(

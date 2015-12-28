@@ -28,8 +28,7 @@
 
 
 	</style>
-K, I'm a bit desperate for work - I'm a mid-level PHP Developer, my latest project is: http://startupwrench.com --- willing to work
-	
+
 @endsection
 @section('content')
             <!-- Features starts -->

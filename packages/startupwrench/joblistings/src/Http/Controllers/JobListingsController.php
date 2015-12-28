@@ -46,11 +46,11 @@ class JobListingsController extends Controller {
 			];
 		}
 		$name = 'date';
-		$jobs = collect($jobs)->sortByDesc('date');
+		$jobs = collect($jobs)->sortByDesc('date')->toArray();
 		// return var_dump($collection->toArray());
    	
-
-		return view('joblistings::index', ['indeed' => $indeed, 'jobs' => $jobs, 'dice' => $dice]	);
+		return var_dump($jobs[0]['date']->date());
+		return view('joblistings::jobs', ['indeed' => $indeed, 'jobs' => $jobs, 'dice' => $dice]	);
 	}
 
 	

@@ -36,15 +36,15 @@
      <div class="col-md-2 col-sm-2">
       <h6 class="grey bold">Popular Searches</h6>
       <ul>
-      	<li><a href="#">Accounting Jobs</a></li>
-        <li><a href="#">Developer Jobs</a></li>
-        <li><a href="#">Engineering Jobs</a></li>
-        <li><a href="#">Game Developer Jobs</a></li>
-        <li><a href="#">IT Jobs</a></li>
-        <li><a href="#">Network Admin Jobs</a></li>
-        <li><a href="#">Startup Jobs</a></li>
-        <li><a href="#">Technology Jobs</a></li>
-        <li><a href="#">Tech support Jobs</a></li>
+      	<li><a href="{{ url('/jobs?search=Accounting') }}">Accounting Jobs</a></li>
+        <li><a href="{{ url('/jobs?search=Developer') }}">Developer Jobs</a></li>
+        <li><a href="{{ url('/jobs?search=Engineer') }}">Engineering Jobs</a></li>
+        <li><a href="{{ url('/jobs?search=Game%20Developer') }}">Game Developer Jobs</a></li>
+        <li><a href="{{ url('/jobs?search=IT') }}">IT Jobs</a></li>
+        <li><a href="{{ url('/jobs?search=Networking') }}">Network Admin Jobs</a></li>
+        <li><a href="{{ url('/jobs?search=Startup') }}">Startup Jobs</a></li>
+        <li><a href="{{ url('/jobs?search=Technology') }}">Technology Jobs</a></li>
+        <li><a href="{{ url('/jobs?search=Tech%20Support') }}">Tech support Jobs</a></li>
 
       </ul>
 

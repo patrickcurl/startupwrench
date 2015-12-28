@@ -1,7 +1,8 @@
 <?php 
 
 return [
-	'route' => 'jobbers',
+	'route' => 'jobs',
+	'layout' => 'layouts.master', // Layout that job listings should extend
 	'indeed' => [
 		'enabled' => true,
 		'id' => env('INDEED_KEY', 'putkeyhere'), // put publisher id here. 
