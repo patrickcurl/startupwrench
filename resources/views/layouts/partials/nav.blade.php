@@ -15,12 +15,12 @@
 				<ul class="nav navbar-nav">
 					  <li><a href="{{ url('/') }}">Home </a></li> 
 				  <!-- Refer Bootstrap navbar doc -->
-				  <li><a href="{{ url('/about') }}">About us</a></li>
-				  <li><a href="{{ url('/blog') }}">Blog</a></li>
-				  <li><a href="{{ url('/mvp') }}">MVP for 4K</a></li>
-				  <li><a href="{{ url('/jobs') }}">Startup Jobs</a></li>
-				  <li><a href="{{ url('/contact') }}">Contact</a></li>
-				  <li><a href="{{ url('/privacy') }}">Privacy Policy</a></li>
+				  <li><a href="{{ url('/p/about') }}">About us</a></li>
+				  <li><a href="{{ url('/p/blog') }}">Blog</a></li>
+				  <li><a href="{{ url('/p/mvp') }}">MVP for 4K</a></li>
+				  <li><a href="{{ url('/p/jobs') }}">Startup Jobs</a></li>
+				  <li><a href="{{ url('/p/contact') }}">Contact</a></li>
+				  <li><a href="{{ url('/p/privacy') }}">Privacy Policy</a></li>
 				</ul>
 			  </nav>
 			 </div>

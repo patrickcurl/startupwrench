@@ -145,6 +145,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        StartupWrench\JobListings\JobListingsServiceProvider::class,
+
+
         // Custom
         Collective\Html\HtmlServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
@@ -166,6 +169,8 @@ return [
         Sofa\Eloquence\ServiceProvider::class,
         Arcanedev\SeoHelper\SeoHelperServiceProvider::class,
         // Bernardino\SimpleAdmin\SimpleAdminServiceProvider::class,
+        JeroenG\Packager\PackagerServiceProvider::class,
+
     ],
 
     /*

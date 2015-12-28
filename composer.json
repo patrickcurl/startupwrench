@@ -33,7 +33,7 @@
         "jobbrander/jobs-indeed": "^0.4.0",
         "jobbrander/jobs-simplyhired": "^0.4.0",
         "jobbrander/jobs-dice": "^0.3.0",
-        "startupwrench/jobfeed": "dev-master"
+        "jeroen-g/laravel-packager": "^1.3"
 
 
     },
@@ -48,6 +48,7 @@
             "database"
         ],
         "psr-4": {
+            "StartupWrench\\JobListings\\": "packages/startupwrench/joblistings/src",
             "App\\": "app/"
         }
     },

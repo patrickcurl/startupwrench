@@ -1,0 +1,48 @@
+{
+    "name": "StartupWrench/JobListings",
+    "description": "List jobs from indeed, simplyhired, dice, etc...",
+    "keywords": [
+        "startupwrench",
+        "joblistings"
+    ],
+    "homepage": "https://github.com/startupwrench/joblistings",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Patrick Curl",
+            "email": "patrick@startupwrench.com",
+            "homepage": "http://startupwrench.com/projects",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.1",
+        "php" : ">=5.3.0",
+        "jobbrander/jobs-indeed": "^0.4.0",
+        "jobbrander/jobs-simplyhired": "^0.4.0",
+        "jobbrander/jobs-dice": "^0.3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "startupwrench\\joblistings\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "startupwrench\\joblistings\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

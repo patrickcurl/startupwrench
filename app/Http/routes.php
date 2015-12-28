@@ -164,4 +164,4 @@ Route::get('sitemap', 'SitemapController@getSitemap');
 Route::get('sitemap-resources', 'SitemapController@getSitemapResources');
 Route::get('sitemap-topics', 'SitemapController@getSitemapTopics');
 Route::get('sitemap-pages', 'SitemapController@getSitemapPages');
-Route::any('{catchall}', 'PageController@getPage');
+Route::any('p/{catchall}', 'PageController@getPage');

@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "eed458929b9d8fbfe39865a39768bdb8",
-    "content-hash": "0ef41bb2171a749606d86dd0acfa6734",
+    "hash": "d239e32f4df28184693ed68d8e30c48e",
+    "content-hash": "1822afac53d8f954a9c206c165bdc1d0",
     "packages": [
         {
             "name": "adamwathan/eloquent-oauth",
-            "version": "v8.0.0",
+            "version": "v8.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/adamwathan/eloquent-oauth.git",
-                "reference": "fa30313789a7cc6637bd00477a73bfa9936ccd17"
+                "reference": "2c74b7b1c36566e6ba76315582b17285311e53ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adamwathan/eloquent-oauth/zipball/fa30313789a7cc6637bd00477a73bfa9936ccd17",
-                "reference": "fa30313789a7cc6637bd00477a73bfa9936ccd17",
+                "url": "https://api.github.com/repos/adamwathan/eloquent-oauth/zipball/2c74b7b1c36566e6ba76315582b17285311e53ad",
+                "reference": "2c74b7b1c36566e6ba76315582b17285311e53ad",
                 "shasum": ""
             },
             "require": {
@@ -61,7 +61,7 @@
                 }
             ],
             "description": "Stupid simple OAuth authentication with Laravel and Eloquent",
-            "time": "2015-09-13 00:13:10"
+            "time": "2015-10-26 14:05:26"
         },
         {
             "name": "adamwathan/eloquent-oauth-l5",
@@ -2414,6 +2414,54 @@
             "time": "2015-12-05 17:17:57"
         },
         {
+            "name": "jeroen-g/laravel-packager",
+            "version": "v1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Jeroen-G/laravel-packager.git",
+                "reference": "b327387efa89f6ad9741d4b631f72189e4a3e323"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Jeroen-G/laravel-packager/zipball/b327387efa89f6ad9741d4b631f72189e4a3e323",
+                "reference": "b327387efa89f6ad9741d4b631f72189e4a3e323",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "illuminate/console": "~5",
+                "illuminate/filesystem": "~5",
+                "illuminate/support": "~5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JeroenG\\Packager\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "EUPL-1.1"
+            ],
+            "authors": [
+                {
+                    "name": "JeroenG",
+                    "email": "jeroengjeroeng@gmail.com",
+                    "homepage": "https://github.com/Jeroen-G"
+                }
+            ],
+            "description": "A cli tool for creating Laravel packages.",
+            "homepage": "https://github.com/Jeroen-G/laravel-packager",
+            "keywords": [
+                "Skeleton",
+                "github",
+                "laravel",
+                "package",
+                "packager"
+            ],
+            "time": "2015-11-17 16:22:28"
+        },
+        {
             "name": "jobbrander/jobs-common",
             "version": "1.0.4",
             "source": {
@@ -2738,12 +2786,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a74a60697d370debfc9fd53ba2c4ba4c7fc68c3f"
+                "reference": "0df88079e22136c8410aa57e524aa5eba0b75bfe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a74a60697d370debfc9fd53ba2c4ba4c7fc68c3f",
-                "reference": "a74a60697d370debfc9fd53ba2c4ba4c7fc68c3f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/0df88079e22136c8410aa57e524aa5eba0b75bfe",
+                "reference": "0df88079e22136c8410aa57e524aa5eba0b75bfe",
                 "shasum": ""
             },
             "require": {
@@ -2858,7 +2906,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-12-22 19:49:25"
+            "time": "2015-12-24 19:53:31"
         },
         {
             "name": "laravelcollective/html",
@@ -4229,60 +4277,6 @@
             "time": "2015-11-17 15:31:14"
         },
         {
-            "name": "startupwrench/jobfeed",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/startupwrench/jobfeed.git",
-                "reference": "cdf5ad43e7bdb3c1038321ae15fde1187fb712f4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/startupwrench/jobfeed/zipball/cdf5ad43e7bdb3c1038321ae15fde1187fb712f4",
-                "reference": "cdf5ad43e7bdb3c1038321ae15fde1187fb712f4",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5",
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Startupwrench\\Jobfeed": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Patrick Curl",
-                    "email": "patrick@startupwrench.com",
-                    "homepage": "https://startupwrench.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Aggregate jobs from multiple providers like Indeed, SimplyHired, etc...",
-            "homepage": "https://startupwrench.com/projects/laravel-jobfeed",
-            "keywords": [
-                "dice",
-                "employment",
-                "indeed",
-                "job",
-                "job board",
-                "jobboard",
-                "jobs",
-                "laravel",
-                "simplyhired"
-            ],
-            "time": "2015-12-22 22:11:44"
-        },
-        {
             "name": "stevebauman/location",
             "version": "v1.3.1",
             "source": {
@@ -4443,12 +4437,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "5e828324f6b3b6a248c578d4e2c7c307f179bca1"
+                "reference": "4e35a78f932a4c07bd349efea647ac741c1419b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/5e828324f6b3b6a248c578d4e2c7c307f179bca1",
-                "reference": "5e828324f6b3b6a248c578d4e2c7c307f179bca1",
+                "url": "https://api.github.com/repos/symfony/console/zipball/4e35a78f932a4c07bd349efea647ac741c1419b6",
+                "reference": "4e35a78f932a4c07bd349efea647ac741c1419b6",
                 "shasum": ""
             },
             "require": {
@@ -4494,7 +4488,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-12-18 16:59:46"
+            "time": "2015-12-23 11:17:38"
         },
         {
             "name": "symfony/css-selector",
@@ -5021,12 +5015,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "322af2321957e446534258ff04e66b80b821ea84"
+                "reference": "a3fb8f4c4afc4f1b285de5df07e568602934f525"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/322af2321957e446534258ff04e66b80b821ea84",
-                "reference": "322af2321957e446534258ff04e66b80b821ea84",
+                "url": "https://api.github.com/repos/symfony/process/zipball/a3fb8f4c4afc4f1b285de5df07e568602934f525",
+                "reference": "a3fb8f4c4afc4f1b285de5df07e568602934f525",
                 "shasum": ""
             },
             "require": {
@@ -5062,7 +5056,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2015-12-10 16:58:22"
+            "time": "2015-12-23 11:03:39"
         },
         {
             "name": "symfony/routing",
@@ -5070,12 +5064,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "a2f9c26cc88ed236ad063b78d95c41c48cf895f7"
+                "reference": "2c100bd94be50e2a1fce7fe1ac534e28776c24ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/a2f9c26cc88ed236ad063b78d95c41c48cf895f7",
-                "reference": "a2f9c26cc88ed236ad063b78d95c41c48cf895f7",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/2c100bd94be50e2a1fce7fe1ac534e28776c24ff",
+                "reference": "2c100bd94be50e2a1fce7fe1ac534e28776c24ff",
                 "shasum": ""
             },
             "require": {
@@ -5135,7 +5129,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2015-12-22 13:04:37"
+            "time": "2015-12-23 06:54:35"
         },
         {
             "name": "symfony/translation",
@@ -6488,8 +6482,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "greggilbert/recaptcha": 20,
-        "sofa/eloquence": 20,
-        "startupwrench/jobfeed": 20
+        "sofa/eloquence": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
