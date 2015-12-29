@@ -4,15 +4,24 @@ namespace StartupWrench\JobListings\Http\Controllers;
 use App\Http\Controllers\Controller;
 use JobBrander\Jobs\Client\Providers\Indeed;
 use JobBrander\Jobs\Client\Providers\Dice;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Config;
 class JobListingsController extends Controller {
 
-	public function getJobs(){
+	public function getJobs(Request $request){
+
+		$location = $request->input('location');
+		$search = $request->input('search');
+		$company = $request->input('company');
+		$categories = Config::get('joblistings.categories');
 		// Defaults
 		$data = [
-			'keyword' => 'developer',
-			'location' => 'Chicago, IL',
-			'city' => 'Chicago',
-			'state' => 'IL',
+			'keyword' => $search,
+			'location' => $location,
+			'company' => $company,
+			// 'city' => 'Chicago',
+			// 'state' => 'IL',
 			'sort' => 'relevance',
 			'radius' => '100',
 			'page' => 0,
@@ -20,37 +29,42 @@ class JobListingsController extends Controller {
 			'days' => 20
 		];
 		$indeed = $this->indeed($data)->all();
-		$dice = $this->dice($data)->all();
 		
+		$dice = $this->dice($data)->all();
+		// var_dump($dice);
 		$jobs = [];
 		foreach($indeed as $i){
 		 	$jobs[] = [
 		 		'company' => $i->company,
-		 		'date' => $i->datePosted,
+		 		'date' => $i->datePosted->format('F d, Y'),
+		 		'isodate' => $i->datePosted->format('Y-m-d'),
 		 		'description' => $i->description,
 		 		'location' => $i->location,
 		 		'source' => "Indeed",
 		 		'name' => $i->name,
-		 		'url' => $i->url
+		 		'url' => $i->url,
+		 		'source' => 'Indeed'
 		 	];
 		}
 		foreach($dice as $d){
 			$jobs[] = [
 			'company' => $d->company,
-		 		'date' => $d->datePosted,
+		 		'date' => $d->datePosted->format('F d, Y'),
+		 		'isodate' => $d->datePosted->format('Y-m-d'),
 		 		'description' => $d->description,
 		 		'location' => $d->location,
 		 		'source' => "Dice",
 		 		'name' => $d->name,
-		 		'url' => $d->url
+		 		'url' => $d->url,
+		 		'source' => 'Dice'
 			];
 		}
 		$name = 'date';
-		$jobs = collect($jobs)->sortByDesc('date')->toArray();
+		$jobs = collect($jobs)->sortByDesc('date');
 		// return var_dump($collection->toArray());
    	
-		return var_dump($jobs[0]['date']->date());
-		return view('joblistings::jobs', ['indeed' => $indeed, 'jobs' => $jobs, 'dice' => $dice]	);
+		// return var_dump($jobs[0]['date']->format('Y-m-d'));
+		return view('joblistings::jobs', ['jobs' => $jobs, 'search' => $search, 'location' => $location, 'company' => $company, 'categories' => $categories]	);
 	}
 
 	
@@ -62,9 +76,9 @@ class JobListingsController extends Controller {
 	    ->setDirect()    //  (optional) if the value of this parameter is "1" then jobs returned will be direct hire
 	    ->setAreacode()    //  (optional) specify the jobs area code
 	    ->setCountry()    //  (optional) specify the jobs ISO 3166 country code
-	    ->setState($data['state'])    //  (optional) specify the jobs United States Post Office state code
+	    // ->setState($data['state'])    //  (optional) specify the jobs United States Post Office state code
 	    ->setSkill()    //  (optional) specify search text for the jobs skill property
-	    ->setCity($data['city'])    //  (optional) specify the jobs United States Post Office ZipCode as the center of 40 mile radius
+	    // ->setCity($data['city'])    //  (optional) specify the jobs United States Post Office ZipCode as the center of 40 mile radius
 	    ->setText()    //  (optional) specify search text for the jobs entire body
 	    ->setIp()    //  (optional) specify an IP address that will be used to look up a geocode which will be used in the search
 	    ->setAge()    //  (optional) specify a posting age (a.k.a. days back)
@@ -74,7 +88,7 @@ class JobListingsController extends Controller {
 	    ->setSort()    //  (optional) specify a sort paremeter; sort=1 sorts by posted age, sort=2 sorts by job title, sort=3 sorts by company, sort=4 sorts by location
 	    ->setSd()    //  (optional) sort direction; sd=a sort order is ASCENDING sd=d sort order is DESCENDING
 	    // JobBrander parameters
-	    ->setKeyword($data['keyword']) // The search text/keywords for the jobs entire body
+	    ->setKeyword($data['company'] . " " . $data['keyword']) // The search text/keywords for the jobs entire body
 	    ->setCount(200)         // Specify the number of results per page
 	    ->getJobs();
 	    return $jobs;
@@ -88,7 +102,7 @@ class JobListingsController extends Controller {
 				]);
 
 		$jobs = $client
-    ->setKeyword($data['keyword'])                 // Query. By default terms are ANDed. To see what is possible, use the [advanced search page](http://www.indeed.com/advanced_search) to perform a search and then check the url for the q value.
+    ->setKeyword($data['company'] . " " . $data['keyword'])                 // Query. By default terms are ANDed. To see what is possible, use the [advanced search page](http://www.indeed.com/advanced_search) to perform a search and then check the url for the q value.
     ->setFormat('json')                             // Format. Which output format of the API you wish to use. The options are "xml" and "json". If omitted or invalid, the json format is used.
     // ->setCity('Chicago')                            // City.
     // ->setState('IL')                                // State.

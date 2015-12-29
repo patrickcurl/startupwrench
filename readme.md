@@ -2,6 +2,7 @@
 
 [![Join the chat at https://gitter.im/patrickcurl/startupwrench](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/patrickcurl/startupwrench?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/patrickcurl/startupwrench)
+[![ghit.me](https://ghit.me/badge.svg?repo=startupwrench/startupwrench)](https://ghit.me/repo/startupwrench/startupwrench)
 
 StartupWrench is a startup resource directory, it's open source and built via laravel with algolia for search indexing, and some javascript powering the instant search. 
 

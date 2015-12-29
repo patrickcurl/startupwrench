@@ -2,6 +2,8 @@
 
 return [
 	'route' => 'jobs',
+	'path' => '/jobs',
+	'categories' => ['Accounting', 'Developer', 'Engineering', 'Software', 'Marketing', 'Networking', 'Startup', 'Technology', 'Tech Support'],
 	'layout' => 'layouts.master', // Layout that job listings should extend
 	'indeed' => [
 		'enabled' => true,
