@@ -18,7 +18,7 @@
 				  <li><a href="{{ url('/p/about') }}">About us</a></li>
 				  <li><a href="{{ url('/p/blog') }}">Blog</a></li>
 				  <li><a href="{{ url('/p/mvp') }}">MVP for 4K</a></li>
-				  <li><a href="{{ url('/p/jobs') }}">Startup Jobs</a></li>
+				  <li><a href="http://jobs.startupwrench.com">Startup Jobs</a></li>
 				  <li><a href="{{ url('/p/contact') }}">Contact</a></li>
 				  <li><a href="{{ url('/p/privacy') }}">Privacy Policy</a></li>
 				</ul>

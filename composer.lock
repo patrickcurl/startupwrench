@@ -361,12 +361,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "974fd16e328ca851a081449100d9509af59cf0ff"
+                "reference": "3bf871f2d70e0412379613b2a52d03f5a3d6a75e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/974fd16e328ca851a081449100d9509af59cf0ff",
-                "reference": "974fd16e328ca851a081449100d9509af59cf0ff",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/3bf871f2d70e0412379613b2a52d03f5a3d6a75e",
+                "reference": "3bf871f2d70e0412379613b2a52d03f5a3d6a75e",
                 "shasum": ""
             },
             "require": {
@@ -407,7 +407,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2015-12-22 06:22:38"
+            "time": "2015-12-30 15:28:27"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -904,12 +904,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "619c3d4910205255c6cc637adb97fec16eaca532"
+                "reference": "6e52f02186bd4bd2ff80537350e730af154cc332"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/619c3d4910205255c6cc637adb97fec16eaca532",
-                "reference": "619c3d4910205255c6cc637adb97fec16eaca532",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/6e52f02186bd4bd2ff80537350e730af154cc332",
+                "reference": "6e52f02186bd4bd2ff80537350e730af154cc332",
                 "shasum": ""
             },
             "require": {
@@ -966,7 +966,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-12-25 12:33:13"
+            "time": "2015-12-30 19:51:35"
         },
         {
             "name": "doctrine/collections",
@@ -1626,12 +1626,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "2e5c595512de4885435eaff24b67066769b64b34"
+                "reference": "74fc3909170d66f3e93719ae025b79faea1f49f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/2e5c595512de4885435eaff24b67066769b64b34",
-                "reference": "2e5c595512de4885435eaff24b67066769b64b34",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/74fc3909170d66f3e93719ae025b79faea1f49f5",
+                "reference": "74fc3909170d66f3e93719ae025b79faea1f49f5",
                 "shasum": ""
             },
             "require": {
@@ -1680,7 +1680,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2015-12-01 02:41:23"
+            "time": "2015-12-29 21:28:50"
         },
         {
             "name": "guzzlehttp/promises",
@@ -2786,12 +2786,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "57d8251b26e994f428e3cc0630f90b2b14d2fc1f"
+                "reference": "9c53c77e51ac0ff894057d44536cf88f0d1fd80c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/57d8251b26e994f428e3cc0630f90b2b14d2fc1f",
-                "reference": "57d8251b26e994f428e3cc0630f90b2b14d2fc1f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/9c53c77e51ac0ff894057d44536cf88f0d1fd80c",
+                "reference": "9c53c77e51ac0ff894057d44536cf88f0d1fd80c",
                 "shasum": ""
             },
             "require": {
@@ -2906,7 +2906,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-12-28 15:52:33"
+            "time": "2015-12-30 23:14:26"
         },
         {
             "name": "laravelcollective/html",
@@ -3420,12 +3420,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "719ca71d4ac80e1985dcd91dd8ec5a47db58ad80"
+                "reference": "9a6a1473693ae7ed222dc399c7fe672f7b42eb0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/719ca71d4ac80e1985dcd91dd8ec5a47db58ad80",
-                "reference": "719ca71d4ac80e1985dcd91dd8ec5a47db58ad80",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/9a6a1473693ae7ed222dc399c7fe672f7b42eb0a",
+                "reference": "9a6a1473693ae7ed222dc399c7fe672f7b42eb0a",
                 "shasum": ""
             },
             "require": {
@@ -3463,7 +3463,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2015-12-07 11:12:00"
+            "time": "2015-12-29 13:38:17"
         },
         {
             "name": "paragonie/random_compat",
@@ -3835,20 +3835,21 @@
         },
         {
             "name": "roumen/sitemap",
-            "version": "v2.5.8",
+            "version": "v2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RoumenDamianoff/laravel-sitemap.git",
-                "reference": "637e094b2f5e1e56389845dcd3f0e8db4c2f05d9"
+                "reference": "45fd4b604ef23cb3fda2faa28cc2ca4ab12f3e35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-sitemap/zipball/637e094b2f5e1e56389845dcd3f0e8db4c2f05d9",
-                "reference": "637e094b2f5e1e56389845dcd3f0e8db4c2f05d9",
+                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-sitemap/zipball/45fd4b604ef23cb3fda2faa28cc2ca4ab12f3e35",
+                "reference": "45fd4b604ef23cb3fda2faa28cc2ca4ab12f3e35",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "~5",
+                "paragonie/random_compat": "~1",
                 "php": ">=5.5.9"
             },
             "require-dev": {
@@ -3879,7 +3880,7 @@
                 "generator",
                 "laravel"
             ],
-            "time": "2015-12-17 17:30:38"
+            "time": "2015-12-30 17:13:35"
         },
         {
             "name": "socialnorm/facebook",
@@ -5015,12 +5016,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "d257e3eae6e9745992e001565829c84bab9b53cc"
+                "reference": "e80e187ddfa20e0aef1c44da306b7efc6848e4fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/d257e3eae6e9745992e001565829c84bab9b53cc",
-                "reference": "d257e3eae6e9745992e001565829c84bab9b53cc",
+                "url": "https://api.github.com/repos/symfony/process/zipball/e80e187ddfa20e0aef1c44da306b7efc6848e4fd",
+                "reference": "e80e187ddfa20e0aef1c44da306b7efc6848e4fd",
                 "shasum": ""
             },
             "require": {
@@ -5056,7 +5057,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2015-12-28 13:11:03"
+            "time": "2015-12-30 18:22:28"
         },
         {
             "name": "symfony/routing",
@@ -5064,12 +5065,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "6f47acd8668e52c5597276d9e0fa9993c5bf1b75"
+                "reference": "f054c7a93bc5ae70735779fe974499cbd621ef38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/6f47acd8668e52c5597276d9e0fa9993c5bf1b75",
-                "reference": "6f47acd8668e52c5597276d9e0fa9993c5bf1b75",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/f054c7a93bc5ae70735779fe974499cbd621ef38",
+                "reference": "f054c7a93bc5ae70735779fe974499cbd621ef38",
                 "shasum": ""
             },
             "require": {
@@ -5129,7 +5130,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2015-12-28 13:11:03"
+            "time": "2015-12-30 10:27:24"
         },
         {
             "name": "symfony/translation",
