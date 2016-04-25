@@ -3,12 +3,12 @@ https://startuplister.com/list-of-startup-directories/
 Submitted at: 
 tips@addictivetips.com
 alternative.to
-
-
-
-
-
-
+NextBigWhat
+Techli
+siliconAngle
+AllTopStartups
+LaunchingNext
+SpringWise
 
 
 
@@ -23,7 +23,7 @@ Submitting my startup to anyone who will listen and check it out - you were on t
 
   http://www.startupwrench.com
 Basically, it's a curated list of tools, and resources relating to startups. 
-It's built in laravel, and has instant search (type 3 or more characters in the search bar).. 
+It's built in laravel, and has instant search, and a job board, and hoping to launch a PR blasting tool to spread the word about new startups. 
 
 I've got a lot more that I'm planning on adding in the future. 
 Let me know what you think. 
@@ -42,4 +42,12 @@ Patrick Curl
 Orem, UT 84058
 
 Twitter users to message: 
-AddTips, adhipster, AllTopstartups, alphadigits, alternativeto
+AddTips, adhipster, AllTopstartups, alphadigits, alternativeto, apprater, macappstorm, appadvice, arstechnica, betabound, 1ml_co, boingboing, capterra, cnnct2me, coolstartupbro, dailytekk, digitaltrends, forbes, g2crowd, geekopedia, geekwire, gigaom, inc41, inspiredbeta, 
+
+RSD
+ - Part of sister comps.
+ - Selling aftermarket perf. parts for vehicles. 
+
+ Build core shop apps and tools. PHP 5.6 / mongodb app. 
+ 
+ 11:00AM. Draper 123s. 
