@@ -1,13 +1,12 @@
 <?php
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
-
+use App\Models\BaseModel;
 /**
  * Class Review.
  */
-class Review extends Model
+class Review extends BaseModel
 {
     /**
      * @var array
@@ -20,6 +19,7 @@ class Review extends Model
     {
         return $this->morphTo();
     }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
@@ -27,6 +27,7 @@ class Review extends Model
     {
         return $this->morphTo('author');
     }
+
     /**
      * @param Model $reviewable
      * @param $data
@@ -38,12 +39,13 @@ class Review extends Model
     {
         $review = new static();
         $review->fill(array_merge($data, [
-            'author_id' => $author->id,
-            'author_type' => get_class($author),
+            'author_id'   => $author->id,
+            'author_type' => get_class($author)
         ]));
         $reviewable->reviews()->save($review);
         return $review;
     }
+
     /**
      * @param $id
      * @param $data
@@ -56,6 +58,7 @@ class Review extends Model
         $review->update($data);
         return $review;
     }
+
     /**
      * @param $id
      *

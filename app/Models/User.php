@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -13,9 +13,9 @@ use Bausch\LaravelFortress\Contracts\FortressGuardContract;
 use Bausch\LaravelFortress\Traits\FortressGuardTrait as FortressGuard;
 
 class User extends Model implements AuthenticatableContract,
-                                    AuthorizableContract,
-                                    CanResetPasswordContract,
-                                    FortressGuardContract
+AuthorizableContract,
+CanResetPasswordContract,
+FortressGuardContract
 {
     use Authenticatable, Authorizable, CanResetPassword, FortressGuard;
 

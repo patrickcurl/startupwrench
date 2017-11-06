@@ -1,0 +1,147 @@
+[06-Nov-2017 21:02:37 UTC] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting ',' or ';' in - on line 9
+[06-Nov-2017 21:10:49 UTC] PHP Warning:  Uncaught ErrorException: require(exports/fortress_roles.php): failed to open stream: No such file or directory in /home/patrick/apps/php/laravel/startupwrench/database/seeds/DatabaseSeeder.php:37
+Stack trace:
+#0 /home/patrick/apps/php/laravel/startupwrench/database/seeds/DatabaseSeeder.php(37): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require(exports...', '/home/patrick/a...', 37, Array)
+#1 /home/patrick/apps/php/laravel/startupwrench/database/seeds/DatabaseSeeder.php(37): require()
+#2 /home/patrick/apps/php/laravel/startupwrench/database/seeds/DatabaseSeeder.php(18): DatabaseSeeder->insert('fortress_roles', 'App\\Models\\Fort...')
+#3 /home/patrick/apps/php/laravel/startupwrench/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(61): DatabaseSeeder->run()
+#4 [internal function]: Illuminate\Database\Console\Seeds\SeedCommand->fire()
+#5 /home/patrick/apps/php/laravel/startupwrench/vendor/laravel/framework/src/Illuminate/Container/Container.php(507): call_user in /home/patrick/apps/php/laravel/startupwrench/database/seeds/DatabaseSeeder.php on line 37
+[06-Nov-2017 21:10:49 UTC] PHP Fatal error:  DatabaseSeeder::insert(): Failed opening required 'exports/fortress_roles.php' (include_path='.:') in /home/patrick/apps/php/laravel/startupwrench/database/seeds/DatabaseSeeder.php on line 37
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:01 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:19 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:20:21 UTC] PHP Notice:  A non well formed numeric value encountered in /home/patrick/apps/php/laravel/startupwrench/vendor/symfony/var-dumper/Cloner/VarCloner.php on line 144
+[06-Nov-2017 21:32:58 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ']' in - on line 24
+[06-Nov-2017 21:33:02 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ']' in - on line 24
+[06-Nov-2017 21:34:37 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ']' in - on line 25
+[06-Nov-2017 21:35:06 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ']' in - on line 28
+[06-Nov-2017 21:35:23 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in - on line 39
+[06-Nov-2017 21:36:19 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in - on line 39
+[06-Nov-2017 21:38:01 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in - on line 39
+[06-Nov-2017 21:38:06 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in - on line 39

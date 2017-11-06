@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateResourceTopicTable extends Migration
+class CreateResourceTopicsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateResourceTopicTable extends Migration
      */
     public function up()
     {
-        Schema::create('resource_topic', function (Blueprint $table) {
+        Schema::create('resource_topics', function (Blueprint $table) {
             $table->integer('resource_id');
             $table->integer('topic_id');
         });
