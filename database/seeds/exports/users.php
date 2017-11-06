@@ -14,6 +14,6 @@ return [
         'id'       => '1',
         'name'     => '',
         'email'    => 'patrick@example.com',
-        'password' => 'test1234'
+        'password' => Hash::make("test1234")
     ]
 ];
