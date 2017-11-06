@@ -63,7 +63,8 @@ class PageController extends Controller
                 'user_message' => $request->get('message')
             ], function ($message) {
                 $message->from('patrick@startupwrench.com');
-                $message->to('patrickwcurl@gmail.com', 'Admin')->subject('StartupWrench Feedback');
+                $message->to('patrickwcurl@gmail.com', 'Admin')
+                        ->subject('StartupWrench Feedback');
             });
         return redirect('contact')->with('message', 'Thanks for contacting us!');
     }

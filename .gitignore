@@ -1,6 +1,5 @@
 /vendor
 /resources/assets/bower
-/database/seeds
 /database/backups
 /node_modules
 Homestead.yaml
